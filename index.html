@@ -329,6 +329,77 @@ footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:spac
 footer.site img{height:36px}
 footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 
+/* ---------- Bird corner ---------- */
+.bird-hero{position:relative;border-radius:18px;overflow:hidden;min-height:240px;display:flex;align-items:flex-end;color:#fff;background:#2a3a40;margin-top:16px}
+.bird-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bird-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,25,30,.85),rgba(10,25,30,.1) 70%)}
+.bird-hero .copy{position:relative;z-index:1;padding:22px;max-width:560px}
+.bird-hero h1{margin:0 0 4px;font-size:24px}
+.bird-hero p{margin:0;opacity:.88;font-size:14px}
+.pack{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;background:#fff}
+.pack .ph{aspect-ratio:16/9;overflow:hidden}
+.pack .ph img{width:100%;height:100%;object-fit:cover}
+.pack .bd{padding:18px;display:flex;flex-direction:column;gap:10px}
+.pack h3{margin:0;font-size:18px}
+.pack p{margin:0;color:var(--muted);font-size:14px}
+.pack .inc{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+.pack .inc li{display:flex;gap:8px;align-items:center;font-size:13.5px}
+.pack .inc svg{color:var(--brand);width:17px;height:17px}
+.pack .ft{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:4px}
+.price-big{font-size:20px;font-weight:700}
+.price-big s{font-size:13px;font-weight:400;color:var(--faint);margin-inline-start:6px}
+.bird-card{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:var(--r);width:100%;background:#fff}
+.bird-card>img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none}
+.bird-card .tx{flex:1;min-width:0}
+.bird-card .w{text-align:left;flex:none}
+.bird-card .w b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.bird-card .w small{color:var(--muted);font-size:12px}
+.trend{font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+.trend.down{color:#b7791f}.trend.up{color:var(--accent)}.trend.flat{color:var(--muted)}
+.trend.alert{color:var(--danger)}
+.chart{border:1px solid var(--line);border-radius:12px;padding:10px 10px 4px;background:#fff}
+.chart svg{width:100%;height:auto;display:block}
+.alert-box{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;font-size:13.5px;margin-top:10px;background:#fdf0f0;color:#8a2a2a}
+.alert-box.ok{background:#e8f6ef;color:#17603f}
+.alert-box svg{flex:none;margin-top:1px;width:18px;height:18px}
+.w-log{display:flex;gap:8px;margin-top:10px}
+.w-log .field{flex:1;min-width:0}
+.w-log .btn{flex:none}
+.chart svg{direction:ltr}
+.avoid{display:flex;flex-wrap:wrap;gap:8px}
+.avoid span{font-size:13.5px;padding:6px 12px;border-radius:8px;background:#fdf0f0;color:#8a2a2a;font-weight:500}
+.cols-2{display:grid;gap:0 24px}
+.cols-2>*,.services-cols>*{min-width:0}
+
+/* ---------- Events ---------- */
+.ev-grid{display:grid;gap:14px}
+.ev{display:flex;gap:14px;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:#fff;width:100%;transition:border-color .15s,box-shadow .2s}
+.ev:hover{border-color:#d5dce3;box-shadow:0 6px 20px rgba(20,40,60,.06)}
+.ev .dt{width:58px;flex:none;border-radius:12px;background:var(--tint);color:var(--brand-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0;align-self:flex-start}
+.ev .dt b{font-size:22px;line-height:1.1;font-variant-numeric:tabular-nums}
+.ev .dt small{font-size:11.5px}
+.ev .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.ev .tag{align-self:flex-start;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:6px;background:var(--soft);color:var(--muted)}
+.ev .tag.bird{background:#fff4dc;color:#7a5200}
+.ev .tag.online{background:#ecebfb;color:#3f3a8a}
+.ev h4{margin:0;font-size:15px;font-weight:600;line-height:1.45}
+.ev .meta{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.ev .meta span{display:inline-flex;align-items:center;gap:4px}
+.ev .meta svg{width:14px;height:14px}
+.ev .bot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+.seats{flex:1;max-width:160px}
+.seats .bar{height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.seats .bar i{display:block;height:100%;background:var(--brand)}
+.seats small{font-size:12px;color:var(--muted)}
+.seats.low small{color:var(--danger);font-weight:600}
+.seats.low .bar i{background:var(--danger)}
+.ev .fee{font-weight:700;font-size:14px;white-space:nowrap}
+.ev .ph{width:96px;flex:none;border-radius:10px;overflow:hidden;display:none}
+.ev .ph img{width:100%;height:100%;object-fit:cover}
+.ev-hero{aspect-ratio:16/8;border-radius:14px;overflow:hidden;margin-bottom:14px;background:var(--soft)}
+.ev-hero img{width:100%;height:100%;object-fit:cover}
+.joined{font-size:12px;font-weight:600;color:var(--accent);background:#e8f6ef;padding:2px 8px;border-radius:6px}
+
 /* ---------- Tablet ---------- */
 @media (min-width:700px){
   .wrap{padding:0 28px}
@@ -349,6 +420,13 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
   .sheet .grab{display:none}
   .sheet .body{padding-top:6px}
   .pd-img{aspect-ratio:16/10}
+  .ev-grid{grid-template-columns:1fr 1fr}
+  .ev .ph{display:block}
+  .bird-hero{min-height:300px}
+  .bird-hero h1{font-size:30px}
+  .bird-hero .copy{padding:28px}
+  .pack{grid-template-columns:1fr 1.2fr}
+  .pack .ph{aspect-ratio:auto}
 }
 /* ---------- Desktop ---------- */
 @media (min-width:1024px){
@@ -376,6 +454,10 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
   .services-cols .svc-grid{grid-template-columns:repeat(2,1fr)}
   .services-cols>div:last-child{position:sticky;top:96px}
   .search-panel .wrap{max-width:720px}
+  .ev-grid.three{grid-template-columns:repeat(3,1fr)}
+  .ev-grid.three .ev{flex-direction:column}
+  .ev-grid.three .ev .ph{display:none}
+  .cols-2{grid-template-columns:1.3fr 1fr;align-items:start}
 }
 @media (max-width:1023px){ .services-cols>div:last-child{margin-top:28px} }
 </style>
@@ -400,6 +482,8 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
         <button data-v="home">الرئيسية</button>
         <button data-v="services">الخدمات</button>
         <button data-v="vets">أطباؤنا</button>
+        <button data-v="birds">ركن الطيور</button>
+        <button data-v="events">الفعاليات</button>
         <button data-v="store">المتجر</button>
         <button data-v="account">حسابي</button>
       </nav>
@@ -412,6 +496,8 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
     <div class="tabs">
       <button data-v="home">الرئيسية</button>
       <button data-v="services">الخدمات</button>
+      <button data-v="birds">ركن الطيور</button>
+      <button data-v="events">الفعاليات</button>
       <button data-v="vets">أطباؤنا</button>
       <button data-v="store">المتجر</button>
       <button data-v="account">مواعيدي</button>
@@ -459,6 +545,18 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
     </section>
 
     <section>
+      <div class="sec-head"><div><h2>فعاليات قادمة</h2><p>ورش وجلسات مع أطبائنا، في العيادة وأونلاين.</p></div><button class="more" onclick="go('events')">كل الفعاليات<svg class="i sm"><use href="#chev"/></svg></button></div>
+      <div class="ev-grid three" id="homeEvents"></div>
+    </section>
+
+    <section>
+      <button class="pcard" style="width:100%;min-height:200px" onclick="go('birds')">
+        <img src="photos/slide-bird-1200.webp" alt="ببغاء على يد صاحبه">
+        <span><b style="font-size:18px">ركن الطيور</b><small>باقة الطائر الجديد، خدمات الطيور، ومتابعة وزن طائرك</small></span>
+      </button>
+    </section>
+
+    <section>
       <div class="sec-head"><h2>تسوّق حسب الأليف</h2></div>
       <div class="pets" id="homePets"></div>
     </section>
@@ -489,6 +587,7 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
       <div>
         <div class="sec-head"><h2 style="font-size:16px">خدمات طبية متخصصة</h2></div>
         <div class="svc-list" id="svcList"></div>
+        <button class="svc-row" style="margin-top:12px;border:1px solid var(--line);border-radius:var(--r)" onclick="go('birds')"><span class="ic"><svg class="i"><use href="#bird"/></svg></span><span class="tx"><b>خدمات الطيور</b><small>فحص الطيور، قص المنقار والأظافر، تحديد الجنس DNA</small></span><svg class="i sm chev"><use href="#chev"/></svg></button>
       </div>
     </div>
   </div>
@@ -500,6 +599,70 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
     <h1 class="page-title">أطباؤنا</h1>
     <p class="page-sub">فريق من الأطباء البيطريين بقيادة د. حسن الموسى، يجمعهم حب الحيوانات قبل المهنة.</p>
     <div class="vets grid" id="allVets"></div>
+  </div>
+</div>
+
+<!-- ================= BIRDS ================= -->
+<div class="view" id="v-birds">
+  <div class="wrap">
+    <div class="bird-hero">
+      <img src="photos/slide-bird-1200.webp" alt="ببغاء ملوّن يقف على يد صاحبه">
+      <div class="copy">
+        <h1>ركن الطيور</h1>
+        <p>رعاية بيطرية للببغاوات والكناري والكوكتيل وكل الطيور الأليفة، مع متابعة وزن طائرك من التطبيق.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="sec-head"><div><h2>طيوري</h2><p>الوزن هو أول مؤشر على صحة الطائر. سجّله أسبوعياً بالجرام.</p></div></div>
+      <div class="my-pets" id="myBirds"></div>
+    </section>
+
+    <section>
+      <div class="pack">
+        <div class="ph"><img src="photos/slide-bird-1200.webp" alt=""></div>
+        <div class="bd">
+          <h3>باقة الطائر الجديد</h3>
+          <p>فحص شامل خلال الأسابيع الأولى من اقتناء طائرك، لتتأكد أنه وصل إليك بصحة جيدة.</p>
+          <ul class="inc">
+            <li><svg class="i"><use href="#check"/></svg>فحص سريري كامل</li>
+            <li><svg class="i"><use href="#check"/></svg>تحديد الجنس DNA</li>
+            <li><svg class="i"><use href="#check"/></svg>تحليل البراز والطفيليات</li>
+            <li><svg class="i"><use href="#check"/></svg>قص الأظافر والمنقار</li>
+            <li><svg class="i"><use href="#check"/></svg>تسجيل الوزن الأساسي</li>
+            <li><svg class="i"><use href="#check"/></svg>خطة تغذية مكتوبة</li>
+          </ul>
+          <div class="ft"><span class="price-big">350 <small style="font-size:13px;color:var(--muted)">ر.س</small><s>480</s></span><button class="btn primary" onclick="openService('birdpack')">احجز الباقة</button></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cols-2">
+      <section>
+        <div class="sec-head"><h2>خدمات الطيور</h2></div>
+        <div class="svc-list" id="birdSvc"></div>
+      </section>
+      <section>
+        <div class="sec-head"><div><h2>أطعمة خطرة على الطيور</h2><p>لا تقدّم لطائرك أياً من التالي.</p></div></div>
+        <div class="avoid"><span>الأفوكادو</span><span>الشوكولاتة</span><span>القهوة والشاي</span><span>الملح والمقرمشات</span><span>البصل والثوم</span><span>بذور التفاح</span><span>الكحول</span></div>
+        <a class="wa-inline" href="#" data-wa="مرحباً، لدي سؤال عن تغذية طائري"><svg class="i wa-ic"><use href="#wa"/></svg><span>سؤال عن تغذية طائرك؟</span><b>اسألنا على واتساب</b></a>
+      </section>
+    </div>
+
+    <section>
+      <div class="sec-head"><div><h2>فعاليات الطيور</h2></div><button class="more" onclick="S.evFilter='bird';go('events')">الكل<svg class="i sm"><use href="#chev"/></svg></button></div>
+      <div class="ev-grid" id="birdEvents"></div>
+    </section>
+  </div>
+</div>
+
+<!-- ================= EVENTS ================= -->
+<div class="view" id="v-events">
+  <div class="wrap">
+    <h1 class="page-title">الفعاليات والورش</h1>
+    <p class="page-sub">ورش تعليمية ودورات تدريب وأيام فحص مخفّضة، يقدّمها أطباء العيادة.</p>
+    <div class="chips" id="evChips"></div>
+    <div class="ev-grid" id="allEvents"></div>
   </div>
 </div>
 
@@ -542,6 +705,10 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
       <div id="appts"></div>
     </section>
     <section>
+      <div class="sec-head"><h2>فعالياتي</h2></div>
+      <div id="myEvents"></div>
+    </section>
+    <section>
       <div class="menu-list">
         <button onclick="toast('سجل الطلبات — نموذج أولي')"><svg class="i"><use href="#bag"/></svg>طلباتي<svg class="i sm chev"><use href="#chev"/></svg></button>
         <button onclick="toast('العناوين — نموذج أولي')"><svg class="i"><use href="#pin"/></svg>العناوين المحفوظة<svg class="i sm chev"><use href="#chev"/></svg></button>
@@ -579,6 +746,8 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
   <img class="logo" src="logo.png" alt="">
   <button class="link" onclick="go('home');closeAll()"><svg class="i"><use href="#home"/></svg>الرئيسية</button>
   <button class="link" onclick="go('services');closeAll()"><svg class="i"><use href="#steth"/></svg>الخدمات البيطرية</button>
+  <button class="link" onclick="go('birds');closeAll()"><svg class="i"><use href="#bird"/></svg>ركن الطيور</button>
+  <button class="link" onclick="go('events');closeAll()"><svg class="i"><use href="#ticket"/></svg>الفعاليات والورش</button>
   <button class="link" onclick="go('vets');closeAll()"><svg class="i"><use href="#users"/></svg>أطباؤنا</button>
   <button class="link" onclick="go('store');closeAll()"><svg class="i"><use href="#store"/></svg>المتجر</button>
   <button class="link" onclick="go('fav');closeAll()"><svg class="i"><use href="#heart"/></svg>المفضلة</button>
@@ -625,6 +794,14 @@ footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6p
     <symbol id="xray" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 6v12M9 8h6M8.5 11h7M9 14h6"/></symbol>
     <symbol id="flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/><path d="M7.5 14h9"/></symbol>
     <symbol id="pill" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="m9 9 6 6"/></symbol>
+    <symbol id="bird" viewBox="0 0 24 24"><path d="M16 7h.01M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.3-2.3L2 20"/><path d="m20 7 2 .5-2 .5M10 18v3M14 17.7V21M7 18a6 6 0 0 0 3.8-10.6"/></symbol>
+    <symbol id="ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4V8Z"/><path d="M13 6v2M13 11v2M13 16v2"/></symbol>
+    <symbol id="scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 18M8.5 16.5 20 6"/></symbol>
+    <symbol id="bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></symbol>
+    <symbol id="dna" viewBox="0 0 24 24"><path d="M7 3c0 6 10 6 10 12s-10 3-10 6M17 3c0 6-10 6-10 12s10 3 10 6"/><path d="M8 6h8M8 18h8M9.5 9.5h5M9.5 14.5h5"/></symbol>
+    <symbol id="video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+    <symbol id="alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></symbol>
+    <symbol id="scale" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 9a4 4 0 0 1 8 0M12 9l1.5-2"/></symbol>
     <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
   </defs>
 </svg>
@@ -664,7 +841,15 @@ const SERVICES = [
   {k:'xray',     ic:'xray',    n:'الأشعة والموجات فوق الصوتية', d:'أشعة وسونار داخل العيادة لتشخيص سريع دون تحويل لمكان آخر.', p:250, list:true, dur:'30 دقيقة'},
   {k:'lab',      ic:'flask',   n:'المختبر البيطري', d:'تحاليل الدم والبول والبراز داخل العيادة بنتائج سريعة.', p:180, list:true, dur:'15 دقيقة'},
   {k:'medboard', ic:'pill',    n:'الفندقة العلاجية', d:'إقامة للأليف الذي يحتاج أدوية منتظمة أو رعاية بعد العمليات، بإشراف طبيب.', p:160, unit:'لليلة', list:true},
+  /* Bird corner */
+  {k:'birdpack',  ic:'bird',     img:'photos/slide-bird-1200.webp', n:'باقة الطائر الجديد', d:'فحص شامل وتحديد جنس وتحليل طفيليات وقص أظافر وخطة تغذية.', p:350, dur:'60 دقيقة', bird:true, pack:true},
+  {k:'birdexam',  ic:'steth',    n:'الكشف الدوري للطيور', d:'فحص الريش والمنقار والتنفس والفضلات، مع تسجيل الوزن.', p:120, dur:'30 دقيقة', bird:true},
+  {k:'beak',      ic:'scissors', n:'قص الأظافر والمنقار', d:'قص آمن بأدوات مخصصة للطيور، دون إيذاء الأوعية الدموية.', p:60, dur:'15 دقيقة', bird:true},
+  {k:'wing',      ic:'bird',     n:'تقليم الريش', d:'تقليم ريش الجناح بطريقة آمنة لحماية طائرك داخل المنزل.', p:60, dur:'15 دقيقة', bird:true},
+  {k:'dna',       ic:'dna',      n:'تحديد جنس الطائر (DNA)', d:'عينة ريش أو دم صغيرة، والنتيجة خلال 5 إلى 7 أيام.', p:150, dur:'10 دقائق', bird:true},
+  {k:'birdboard', ic:'bed',      n:'فندقة الطيور', d:'إقامة هادئة بعيداً عن القطط والكلاب، مع تغذية حسب نظام طائرك.', p:40, unit:'لليلة', bird:true, noVet:true},
 ];
+const isBird = s => !!s.bird;
 const svcBy = k => SERVICES.find(s=>s.k===k);
 
 const CATS = [{k:'all',n:'الكل'},{k:'food',n:'الأطعمة الصحية'},{k:'toys',n:'الألعاب'},{k:'acc',n:'الإكسسوارات'},{k:'care',n:'العناية والنظافة'}];
@@ -690,9 +875,33 @@ const S = {
   pets:[
     {id:1, name:'لولو', type:'cat', breed:'قطة شيرازي', age:'3 سنوات', vet:'mustafa', img:U('1574158622682-e40e69881006',200)},
     {id:2, name:'ماكس', type:'dog', breed:'كلب بيغل', age:'سنتان', vet:'hassan', img:U('1543466835-00a7907e9de1',200)},
+    {id:3, name:'كيوي', type:'bird', breed:'ببغاء صن كونيور', age:'سنة ونصف', vet:'ali', img:'photos/slide-bird-1200.webp',
+     weights:[112,113,111,112,110,111,108,107].map((g,i,a)=>{const d=new Date();d.setDate(d.getDate()-7*(a.length-1-i));return {d,g};})},
   ],
-  appts:[]
+  appts:[], myEvents:[], evFilter:'all'
 };
+
+/* Events: dates are relative to today so the prototype always shows upcoming ones */
+const inDays = n => { const d=new Date(); d.setDate(d.getDate()+n); return d; };
+const EV_CATS = [{k:'all',n:'الكل'},{k:'bird',n:'الطيور'},{k:'dog',n:'الكلاب'},{k:'cat',n:'القطط'},{k:'online',n:'أونلاين'}];
+const EVENTS = [
+  {id:'e1', cat:'bird', n:'ورشة: أساسيات العناية بالطيور', date:inDays(6), time:'6:00 – 7:30 م', host:'ali', place:'في العيادة · الدمام', fee:0, seats:12, left:5, img:'photos/slide-bird-1200.webp',
+   d:'ورشة عملية لأصحاب الطيور الجدد والحاليين. يمكنك إحضار طائرك في قفص النقل.',
+   agenda:['التغذية الصحية والأطعمة الخطرة','علامات المرض المبكرة عند الطيور','كيف تزن طائرك وتتابع وزنه','أسئلة مفتوحة مع الطبيب']},
+  {id:'e2', cat:'bird', n:'يوم الطائر الجديد: الباقة بسعر مخفّض', date:inDays(13), time:'10:00 ص – 2:00 م', host:'mustafa', place:'في العيادة · الدمام', fee:199, oldFee:350, seats:20, left:9, img:'photos/slide-bird-1200.webp',
+   d:'باقة الطائر الجديد كاملة بسعر خاص ليوم واحد. المواعيد كل 30 دقيقة، والتسجيل يحجز لك موعداً.',
+   agenda:['فحص سريري كامل','تحديد الجنس DNA','تحليل البراز والطفيليات','قص الأظافر والمنقار']},
+  {id:'e3', cat:'online', n:'جلسة أونلاين: الإسعافات الأولية لأليفك', date:inDays(4), time:'8:30 – 9:15 م', host:'zahraa', place:'أونلاين · رابط الجلسة يصلك على واتساب', fee:0, seats:100, left:63, img:'photos/slide-cat-1200.webp',
+   d:'ماذا تفعل في الدقائق الأولى عند الاختناق أو الجروح أو التسمم، وقبل الوصول للعيادة.',
+   agenda:['تجهيز حقيبة إسعافات منزلية','التعامل مع الجروح والنزيف','علامات التسمم','متى تتصل بالطبيب فوراً']},
+  {id:'e4', cat:'dog', n:'دورة تدريب الجراء · 4 أسابيع', date:inDays(9), time:'كل سبت · 5:00 – 6:00 م', host:'hassan', place:'في العيادة · الدمام', fee:400, seats:6, left:2, img:U('1543466835-00a7907e9de1',600),
+   d:'مجموعات صغيرة للجراء من عمر 3 إلى 6 أشهر بعد اكتمال التطعيمات الأساسية.',
+   agenda:['الجلوس والانتظار والنداء','المشي بالرسن','التعوّد على الفحص البيطري','التواصل الاجتماعي مع الجراء الأخرى']},
+  {id:'e5', cat:'cat', n:'لقاء أصحاب القطط: التغذية والوزن الصحي', date:inDays(16), time:'6:30 – 7:30 م', host:'mustafa', place:'في العيادة · الدمام', fee:30, seats:15, left:11, img:U('1574158622682-e40e69881006',600),
+   d:'كيف تختار الطعام المناسب لعمر قطتك، وكيف تتجنب السمنة ومشاكل الجهاز البولي.',
+   agenda:['قراءة ملصق الطعام','الكمية المناسبة يومياً','الطعام الجاف أم الرطب','قياس الوزن المثالي']},
+];
+const evBy = id => EVENTS.find(e=>e.id===id);
 (function seed(){ const d=new Date(); d.setDate(d.getDate()+4); S.appts.push({svc:'vaccine', date:d, time:'5:00 م', pet:1, vet:'mustafa'}); })();
 
 const $ = s => document.querySelector(s);
@@ -742,6 +951,117 @@ function prodCard(p){
     </div>
   </div>`;
 }
+/* ---- Bird weight ---- */
+function weightStatus(p){
+  const ws=p.weights||[]; if(!ws.length) return {cls:'flat',txt:'لا يوجد وزن مسجّل',alert:false};
+  const last=ws[ws.length-1].g, prev=ws.length>1?ws[ws.length-2].g:last;
+  const base=ws.slice(0,-1).reduce((a,b)=>a+b.g,0)/Math.max(1,ws.length-1);
+  const drop = ws.length>1 ? (base-last)/base : 0, diff=last-prev;
+  if(drop>=0.1) return {cls:'alert',txt:`انخفض ${Math.round(drop*100)}% عن المعدل`,alert:true,drop};
+  return {cls:diff<0?'down':diff>0?'up':'flat', txt: diff===0?'ثابت منذ آخر وزن':`${diff>0?'+':'−'}${Math.abs(diff)} جم منذ آخر وزن`, alert:false, drop};
+}
+function birdCard(p){
+  const ws=p.weights||[], st=weightStatus(p), last=ws.length?ws[ws.length-1].g:'—';
+  return `<button class="bird-card" onclick="openPet(${p.id})"><img src="${p.img}" alt=""><span class="tx"><b style="font-size:15px">${p.name}</b><small style="display:block;color:var(--muted);font-size:12.5px">${p.breed} · ${p.age}</small><span class="trend ${st.cls}">${st.txt}</span></span><span class="w"><b>${last}</b><small>جرام</small></span></button>`;
+}
+function weightChart(ws){
+  if(ws.length<2) return '';
+  const W=320,H=130,L=34,R=18,T=20,B=24, gs=ws.map(w=>w.g);
+  const lo=Math.floor(Math.min(...gs)-3), hi=Math.ceil(Math.max(...gs)+3);
+  const x=i=>L+(W-L-R)*i/(ws.length-1), y=g=>T+(H-T-B)*(hi-g)/(hi-lo);
+  const pts=ws.map((w,i)=>`${x(i).toFixed(1)},${y(w.g).toFixed(1)}`).join(' ');
+  const area=`${L},${H-B} ${pts} ${x(ws.length-1).toFixed(1)},${H-B}`;
+  const mid=Math.round((lo+hi)/2), f=d=>`${d.getDate()}/${d.getMonth()+1}`;
+  const lastP=ws.length-1;
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${H}" dir="ltr" role="img" aria-label="منحنى الوزن">
+    ${[hi,mid,lo].map(g=>`<line x1="${L}" x2="${W-R}" y1="${y(g)}" y2="${y(g)}" stroke="#e6eaef" stroke-width="1"/><text x="${L-6}" y="${y(g)+4}" font-size="10" text-anchor="end" fill="#8b96a3">${g}</text>`).join('')}
+    <polygon points="${area}" fill="#007c86" fill-opacity=".08"/>
+    <polyline points="${pts}" fill="none" stroke="#007c86" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${ws.map((w,i)=>`<circle cx="${x(i)}" cy="${y(w.g)}" r="${i===lastP?4:2.5}" fill="${i===lastP?'#007c86':'#fff'}" stroke="#007c86" stroke-width="1.5"/>`).join('')}
+    <text x="${x(lastP)+4}" y="${y(ws[lastP].g)-9}" font-size="11" font-weight="600" text-anchor="end" fill="#1b2430">${ws[lastP].g}g</text>
+    <text x="${L}" y="${H-6}" font-size="10" fill="#8b96a3">${f(ws[0].d)}</text>
+    <text x="${W-R}" y="${H-6}" font-size="10" text-anchor="end" fill="#8b96a3">${f(ws[lastP].d)}</text>
+  </svg></div>`;
+}
+function weightBlock(p){
+  const st=weightStatus(p);
+  const input = `<div class="w-log"><label class="field"><svg class="i"><use href="#scale"/></svg><input id="wIn" type="number" inputmode="numeric" placeholder="الوزن اليوم بالجرام"></label><button class="btn primary" onclick="logWeight(${p.id})">سجّل</button></div>`;
+  if((p.weights||[]).length<2) return `<div class="lbl">سجل الوزن <small>بالجرام</small></div><p style="margin:0;color:var(--muted);font-size:13.5px">سجّل وزن ${p.name} أسبوعياً ليظهر منحنى الوزن وننبهك عند أي انخفاض.${p.weights&&p.weights.length?` آخر وزن: ${p.weights[0].g} جم.`:''}</p>${input}`;
+  return `<div class="lbl">سجل الوزن <small>بالجرام · آخر ${p.weights.length} قراءات</small></div>
+    ${weightChart(p.weights)}
+    ${st.alert?`<div class="alert-box">${svg('alert')}<span>وزن ${p.name} ${st.txt}. فقدان 10% من الوزن قد يكون علامة مبكرة على المرض عند الطيور، ننصح بحجز كشف.</span></div>`
+      :`<div class="alert-box ok">${svg('check')}<span>الوزن ضمن المعدل الطبيعي لـ ${p.name}. استمر بالوزن مرة أسبوعياً في نفس الوقت.</span></div>`}
+    ${input}`;
+}
+function logWeight(id){
+  const p=petBy(id), v=parseInt($('#wIn').value,10);
+  if(!v||v<5||v>3000){ toast('أدخل الوزن بالجرام'); $('#wIn').focus(); return; }
+  p.weights=p.weights||[]; p.weights.push({d:new Date(),g:v});
+  render(); openPet(id);
+  toast(weightStatus(p).alert?'تم التسجيل · انتبه لانخفاض الوزن':'تم تسجيل الوزن');
+}
+
+/* ---- Events ---- */
+function evCard(e){
+  const v=vetBy(e.host), low=e.left<=3, joined=S.myEvents.some(r=>r.id===e.id);
+  const tag = e.cat==='bird'?'<span class="tag bird">الطيور</span>':e.cat==='online'?'<span class="tag online">أونلاين</span>':`<span class="tag">${EV_CATS.find(c=>c.k===e.cat).n}</span>`;
+  return `<button class="ev" onclick="openEvent('${e.id}')">
+    <span class="dt"><b>${e.date.getDate()}</b><small>${MON[e.date.getMonth()]}</small></span>
+    <span class="tx">${tag}<h4>${e.n}</h4>
+      <span class="meta"><span>${svg('clock')}${e.time}</span><span>${svg(e.cat==='online'?'video':'pin')}${e.cat==='online'?'أونلاين':'في العيادة'}</span></span>
+      <span class="meta"><span>${v.n}</span></span>
+      <span class="bot"><span class="seats ${low?'low':''}"><span class="bar"><i style="width:${Math.round((1-e.left/e.seats)*100)}%"></i></span><small>${e.left===0?'اكتمل العدد':low?`بقي ${e.left} ${e.left===1?'مقعد':'مقاعد'} فقط`:`${e.left} مقعداً متاحاً`}</small></span>
+      ${joined?'<span class="joined">مسجّل</span>':`<span class="fee">${e.fee?e.fee+' ر.س':'مجاناً'}</span>`}</span>
+    </span>
+    <span class="ph"><img src="${e.img}" alt="" loading="lazy"></span>
+  </button>`;
+}
+let ev={};
+function openEvent(id){
+  const e=evBy(id), v=vetBy(e.host), mine=S.myEvents.find(r=>r.id===id);
+  ev={id,count:1,pet:null};
+  openSheet(`${head('تفاصيل الفعالية')}
+    <div class="ev-hero"><img src="${e.img}" alt=""></div>
+    <h2 class="pd-title">${e.n}</h2>
+    <div class="ticket" style="margin-top:12px">
+      <div><span>التاريخ</span><b>${fmtDate(e.date)}</b></div>
+      <div><span>الوقت</span><b>${e.time}</b></div>
+      <div><span>المكان</span><b>${e.place}</b></div>
+      <div><span>يقدّمها</span><b>${v.n}</b></div>
+      <div><span>الرسوم</span><b>${e.fee?e.fee+' ر.س للشخص':'مجاناً'}${e.oldFee?` <s style="color:var(--faint);font-weight:400">${e.oldFee}</s>`:''}</b></div>
+    </div>
+    <p class="pd-desc">${e.d}</p>
+    <div class="lbl">ماذا ستتعلّم</div>
+    <ul class="bullets">${e.agenda.map(a=>`<li>${svg('check')}${a}</li>`).join('')}</ul>
+    ${mine?'':`<div class="lbl">عدد الحضور</div>
+    <div class="opts">${[1,2,3].map(n=>`<button class="opt ${n===1?'on':''}" onclick="ev.count=${n};sel(this);evTotal()">${n}</button>`).join('')}</div>
+    ${e.cat!=='online'?`<div class="lbl">سيحضر معك <small>اختياري</small></div>
+    <div class="opts"><button class="opt on" onclick="ev.pet=null;sel(this)">بدون أليف</button>${S.pets.filter(p=>e.cat==='bird'?p.type==='bird':e.cat==='all'||p.type===e.cat||e.cat==='online').map(p=>`<button class="opt" onclick="ev.pet=${p.id};sel(this)"><img src="${p.img}" alt="">${p.name}</button>`).join('')}</div>`:''}`}
+    <a class="wa-inline" href="#" data-wa="مرحباً، لدي سؤال عن فعالية: ${e.n}">${svg('wa','wa-ic')}<span>سؤال عن الفعالية؟</span><b>واتساب</b></a>`,
+    mine?`<span class="joined" style="font-size:14px;padding:8px 12px">أنت مسجّل · ${mine.count} ${mine.count>1?'أشخاص':'شخص'}</span><button class="btn ghost" style="margin-inline-start:auto" onclick="cancelEvent('${id}')">إلغاء التسجيل</button>`
+      : e.left===0?`<button class="btn ghost block" disabled>اكتمل العدد</button>`
+      : `<div style="flex:1;min-width:0"><small style="color:var(--muted);display:block;font-size:12px">الإجمالي</small><b id="evt" style="font-size:17px"></b></div><button class="btn primary" style="flex:1.3" onclick="joinEvent()">سجّلني</button>`);
+  if(!mine && e.left) evTotal();
+}
+function evTotal(){ const e=evBy(ev.id), el=$('#evt'); if(el) el.textContent = e.fee ? (e.fee*ev.count)+' ر.س' : 'مجاناً'; }
+function joinEvent(){
+  const e=evBy(ev.id);
+  if(ev.count>e.left){ toast(`بقي ${e.left} مقاعد فقط`); return; }
+  e.left-=ev.count; S.myEvents.push({id:e.id,count:ev.count,pet:ev.pet});
+  render();
+  const ref='EV-'+Math.floor(1000+Math.random()*9000);
+  openSheet(`<div class="success"><div class="ok">${svg('check')}</div><h3>تم تسجيلك</h3>
+    <p>${e.cat==='online'?'سيصلك رابط الجلسة على واتساب قبل موعدها بساعة.':'ستصلك رسالة تذكير على واتساب قبل الفعالية بيوم.'}</p>
+    <div class="ticket"><div><span>الفعالية</span><b>${e.n}</b></div><div><span>الموعد</span><b>${fmtDate(e.date)} · ${e.time}</b></div><div><span>الحضور</span><b>${ev.count} ${ev.count>1?'أشخاص':'شخص'}</b></div>${e.fee?`<div><span>الدفع</span><b>${e.fee*ev.count} ر.س في العيادة</b></div>`:''}<div><span>رقم التسجيل</span><b dir="ltr">#${ref}</b></div></div>
+    <a class="wa-inline" href="#" data-wa="مرحباً، سجّلت في ${e.n} يوم ${fmtDate(e.date)}. رقم التسجيل ${ref}">${svg('wa','wa-ic')}<span>أرسل التسجيل للعيادة</span><b>واتساب</b></a></div>`,
+    `<button class="btn ghost" style="flex:1" onclick="closeAll();go('account')">فعالياتي</button><button class="btn primary" style="flex:1" onclick="closeAll()">تم</button>`);
+}
+function cancelEvent(id){
+  const i=S.myEvents.findIndex(r=>r.id===id); if(i<0) return;
+  evBy(id).left+=S.myEvents[i].count; S.myEvents.splice(i,1);
+  closeAll(); render(); toast('تم إلغاء التسجيل');
+}
+
 function emptyHTML(ic,t,s,btn,act){
   return `<div class="empty"><div class="circle">${svg(ic)}</div><h4>${t}</h4>${s?`<p style="margin:0 0 16px">${s}</p>`:'<div style="height:12px"></div>'}${btn?`<button class="btn primary sm" onclick="${act}">${btn}</button>`:''}</div>`;
 }
@@ -749,10 +1069,19 @@ function render(){
   const w = innerWidth;
   $('#homePets').innerHTML = petFilterHTML();
   $('#storePets').innerHTML = petFilterHTML();
-  const photoSvc = SERVICES.filter(s=>!s.list);
+  const photoSvc = SERVICES.filter(s=>!s.list && !s.bird);
   $('#homeSvc').innerHTML = photoSvc.slice(0, w>=1024?3:w>=700?4:3).map(svcCard).join('');
   $('#allSvc').innerHTML = photoSvc.map(svcCard).join('');
-  $('#svcList').innerHTML = SERVICES.filter(s=>s.list).map(svcRow).join('');
+  $('#svcList').innerHTML = SERVICES.filter(s=>s.list && !s.bird).map(svcRow).join('');
+  $('#birdSvc').innerHTML = SERVICES.filter(s=>s.bird && !s.pack).map(svcRow).join('');
+  const birds = S.pets.filter(p=>p.type==='bird');
+  $('#myBirds').innerHTML = birds.map(birdCard).join('') + `<button class="add-pet" onclick="openPet(null,'bird')">${svg('plus','sm')}إضافة طائر</button>`;
+  const upcoming = [...EVENTS].sort((a,b)=>a.date-b.date);
+  $('#homeEvents').innerHTML = upcoming.slice(0,3).map(evCard).join('');
+  $('#birdEvents').innerHTML = upcoming.filter(e=>e.cat==='bird').map(evCard).join('');
+  $('#evChips').innerHTML = EV_CATS.map(c=>`<button class="chip ${S.evFilter===c.k?'on':''}" onclick="S.evFilter='${c.k}';render()">${c.n}</button>`).join('');
+  $('#allEvents').innerHTML = upcoming.filter(e=>S.evFilter==='all'||e.cat===S.evFilter).map(evCard).join('');
+  $('#myEvents').innerHTML = S.myEvents.length ? S.myEvents.map(r=>{const e=evBy(r.id);return `<button class="appt" style="width:100%" onclick="openEvent('${e.id}')"><div class="date"><b>${e.date.getDate()}</b><small>${MON[e.date.getMonth()]}</small></div><div class="tx"><h5>${e.n}</h5><p>${e.time} · ${r.count} ${r.count>1?'أشخاص':'شخص'}</p></div><span class="status">مسجّل</span></button>`}).join('') : emptyHTML('ticket','لم تسجّل في أي فعالية بعد','','تصفّح الفعاليات',"go('events')");
   $('#homeVets').innerHTML = VETS.map(vetCard).join('');
   $('#allVets').innerHTML = VETS.map(vetCard).join('');
   $('#homeProds').innerHTML = [1,7,4,2,6,3].map(id=>PRODUCTS.find(p=>p.id===id)).slice(0, w>=1024?4:w>=700?6:4).map(prodCard).join('');
@@ -829,18 +1158,21 @@ function vetOptions(cur, onPick){
   return VETS.map(v=>`<button class="vet-opt ${cur===v.k?'on':''}" onclick="${onPick}('${v.k}',this)"><span class="radio"></span><span class="av sm">${v.ini}</span><span class="tx"><b>${v.n}</b><small>${v.r}</small></span></button>`).join('');
 }
 function pePick(k,el){ pe.vet=k; sel(el); }
-function openPet(id){
+function openPet(id, presetType){
   const p = id ? petBy(id) : null;
-  pe = p ? {...p} : {id:null, type:'cat', vet:VETS[0].k};
+  pe = p ? {...p} : {id:null, type:presetType||'cat', vet:VETS[0].k};
+  const types = PET_TYPES.filter(t=>t.k!=='all');
   openSheet(`${head(p?'ملف '+p.name:'إضافة أليف')}
     ${p?`<div style="display:flex;gap:14px;align-items:center"><img src="${p.img}" style="width:68px;height:68px;border-radius:50%;object-fit:cover"><div><b style="font-size:17px">${p.name}</b><div style="color:var(--muted);font-size:13.5px">${p.breed} · ${p.age}</div></div></div>`
       :`<div class="lbl">اسم الأليف</div><label class="field"><input id="peName" placeholder="مثلاً: سمبا"></label>
-        <div class="lbl">النوع</div><div class="opts">${PET_TYPES.filter(t=>t.k!=='all').map((t,i)=>`<button class="opt ${i?'':'on'}" onclick="pe.type='${t.k}';sel(this)">${t.n}</button>`).join('')}</div>
+        <div class="lbl">النوع</div><div class="opts">${types.map(t=>`<button class="opt ${t.k===pe.type?'on':''}" onclick="pe.type='${t.k}';sel(this)">${t.n}</button>`).join('')}</div>
+        <div class="lbl">السلالة <small>اختياري</small></div><label class="field"><input id="peBreed" placeholder="${pe.type==='bird'?'مثلاً: كوكتيل، بادجي، كناري':'مثلاً: شيرازي'}"></label>
         <div class="lbl">العمر</div><label class="field"><input id="peAge" placeholder="مثلاً: سنة ونصف"></label>`}
+    ${p&&p.type==='bird'?weightBlock(p):''}
     <div class="lbl">الطبيب المعالج <small>يُختار تلقائياً عند الحجز</small></div>
     <div class="vet-pick">${vetOptions(pe.vet,'pePick')}</div>
-    ${p?`<div class="lbl">السجل الطبي</div><div class="ticket"><div><span>آخر زيارة</span><b>كشف دوري · قبل شهرين</b></div><div><span>التطعيمات</span><b>محدّثة</b></div><div><span>الوزن</span><b>${p.type==='cat'?'4.2':'11.5'} كجم</b></div></div>`:''}`,
-    `${p?`<button class="btn ghost" onclick="openService('exam',{pet:${p.id}})">احجز لـ ${p.name}</button>`:''}<button class="btn primary" style="flex:1" onclick="savePet()">حفظ</button>`);
+    ${p?`<div class="lbl">السجل الطبي</div><div class="ticket"><div><span>آخر زيارة</span><b>كشف دوري · قبل شهرين</b></div><div><span>التطعيمات</span><b>${p.type==='bird'?'لا تحتاج تطعيمات دورية':'محدّثة'}</b></div>${p.type==='bird'?`<div><span>الجنس (DNA)</span><b>أنثى</b></div>`:`<div><span>الوزن</span><b>${p.type==='cat'?'4.2':'11.5'} كجم</b></div>`}</div>`:''}`,
+    `${p?`<button class="btn ghost" onclick="openService('${p.type==='bird'?'birdexam':'exam'}',{pet:${p.id}})">احجز لـ ${p.name}</button>`:''}<button class="btn primary" style="flex:1" onclick="savePet()">حفظ</button>`);
 }
 function savePet(){
   if(pe.id){ petBy(pe.id).vet = pe.vet; toast(`${vetBy(pe.vet).n} أصبح الطبيب المعالج لـ ${pe.name}`); }
@@ -848,7 +1180,7 @@ function savePet(){
     const name = ($('#peName').value||'').trim();
     if(!name){ $('#peName').focus(); toast('اكتب اسم الأليف'); return; }
     const t = PET_TYPES.find(x=>x.k===pe.type);
-    S.pets.push({id:Date.now(), name, type:pe.type, breed:t.n, age:($('#peAge').value||'—').trim(), vet:pe.vet, img:t.img});
+    S.pets.push({id:Date.now(), name, type:pe.type, breed:($('#peBreed').value||'').trim()||t.n, age:($('#peAge').value||'—').trim(), vet:pe.vet, img:t.img, weights:pe.type==='bird'?[]:undefined});
     toast(`تمت إضافة ${name}`);
   }
   closeAll(); render();
@@ -860,7 +1192,7 @@ let bk = {};
 function openService(k, o={}){
   const s = svcBy(k);
   const days = Array.from({length:14},(_,i)=>{const d=new Date();d.setDate(d.getDate()+i+1);return d;});
-  const pet = o.pet || S.pets[0].id;
+  const pet = o.pet || ((s.bird && S.pets.find(p=>p.type==='bird')) || S.pets[0]).id;
   bk = {k, pet, vet: s.noVet ? null : (o.vet || petBy(pet).vet), day:0, time:null, pickup:k==='pickup', days, chosen:!!o.vet};
   openSheet(`${head('حجز موعد')}
     <div class="svc-top">${s.img?`<img src="${s.img}" alt="">`:`<span class="ic">${svg(s.ic)}</span>`}<div><h3>${s.n}</h3><p>يبدأ من ${s.p} ر.س${s.unit?' '+s.unit:''}${s.dur?' · '+s.dur:''}</p></div></div>
@@ -972,9 +1304,10 @@ function openSearch(){ $('#searchPanel').classList.add('on'); setTimeout(()=>$('
 function closeSearch(){ $('#searchPanel').classList.remove('on'); }
 function doSearch(q){
   q=q.trim();
-  if(!q){ $('#results').innerHTML = `<div class="lbl">عمليات بحث شائعة</div><div class="opts">${['تطعيم','ترويش','طعام','أسنان','حسن','سرير'].map(h=>`<button class="chip" onclick="document.getElementById('q').value='${h}';doSearch('${h}')">${h}</button>`).join('')}</div>`; return; }
-  const sv=SERVICES.filter(s=>(s.n+s.d).includes(q)), pr=PRODUCTS.filter(p=>(p.n+p.d+catName(p.cat)).includes(q)), vt=VETS.filter(v=>(v.n+v.r).includes(q));
-  $('#results').innerHTML = (sv.length||pr.length||vt.length) ?
+  if(!q){ $('#results').innerHTML = `<div class="lbl">عمليات بحث شائعة</div><div class="opts">${['طيور','ورشة','تطعيم','ترويش','طعام','حسن'].map(h=>`<button class="chip" onclick="document.getElementById('q').value='${h}';doSearch('${h}')">${h}</button>`).join('')}</div>`; return; }
+  const sv=SERVICES.filter(s=>(s.n+s.d).includes(q)), pr=PRODUCTS.filter(p=>(p.n+p.d+catName(p.cat)).includes(q)), vt=VETS.filter(v=>(v.n+v.r).includes(q)), evs=EVENTS.filter(e=>(e.n+e.d).includes(q));
+  $('#results').innerHTML = (sv.length||pr.length||vt.length||evs.length) ?
+    evs.map(e=>`<button class="res" onclick="closeSearch();openEvent('${e.id}')"><img src="${e.img}" alt=""><div><b>${e.n}</b><small>فعالية · ${fmtDate(e.date)}</small></div></button>`).join('') +
     vt.map(v=>`<button class="res" onclick="closeSearch();openService('exam',{vet:'${v.k}'})"><span class="ic av">${v.ini}</span><div><b>${v.n}</b><small>${v.r} · احجز موعداً</small></div></button>`).join('') +
     sv.map(s=>`<button class="res" onclick="closeSearch();openService('${s.k}')">${s.img?`<img src="${s.img}" alt="">`:`<span class="ic">${svg(s.ic)}</span>`}<div><b>${s.n}</b><small>خدمة · يبدأ من ${s.p} ر.س</small></div></button>`).join('') +
     pr.map(p=>`<button class="res" onclick="closeSearch();openProduct(${p.id})"><img src="${p.img}" alt=""><div><b>${p.n}</b><small>${catName(p.cat)} · ${p.p} ر.س</small></div></button>`).join('')
