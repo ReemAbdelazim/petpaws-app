@@ -3,348 +3,389 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#007c86">
+<meta name="theme-color" content="#ffffff">
 <title>الكفوف الأليفة</title>
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --brand:#007c86; --brand-dark:#005f67; --logo:#00a9b6; --accent:#25a36f;
-  --ink:#1b2430; --muted:#5b6776; --bg:#fff; --soft:#f3f7fb; --line:#e6ecf2;
-  --tint:#e6f6f7; --sun:#ffe9a8; --sun-ink:#7a5a00; --rose:#fde7e4; --mint:#e3f5ec; --lilac:#ece8fb;
-  --r:18px; --shadow:0 1px 2px rgba(16,40,60,.04),0 8px 24px rgba(16,40,60,.06);
-  --nav-h:72px;
+  --brand:#007c86; --brand-dark:#005f67; --logo:#00a9b6; --accent:#25a36f; --wa:#25a36f;
+  --ink:#1b2430; --muted:#5b6776; --faint:#8b96a3; --bg:#fff; --soft:#f5f7f9; --line:#e6eaef;
+  --tint:#eef7f8; --danger:#d64545;
+  --r:14px; --nav-h:64px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0}
 body{font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-button{user-select:none;-webkit-user-select:none;font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+button{user-select:none;-webkit-user-select:none;font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;text-align:inherit}
+a{color:inherit}
 img{display:block;max-width:100%}
-input,select{font:inherit}
+input,select{font:inherit;color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.i.sm{width:18px;height:18px}
 
 /* ---------- Header ---------- */
-header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.bar .logo{height:40px;width:auto}
-.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .2s}
-.icon-btn:hover{background:var(--soft)}
-.icon-btn.soft{background:var(--tint);color:var(--brand)}
-.badge{position:absolute;top:4px;left:4px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center;transform:scale(0);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
-.badge.on{transform:scale(1)}
-.desk-nav{display:none;gap:4px}
-.desk-nav button{padding:8px 14px;border-radius:999px;color:var(--muted);font-weight:500;transition:.2s}
-.desk-nav button:hover{color:var(--ink)}
-.desk-nav button.on{color:var(--brand);background:var(--tint)}
-.bar-side{display:flex;align-items:center;gap:6px}
-
-.promo{background:var(--brand);color:#fff;font-size:14px;overflow:hidden;max-height:44px;transition:max-height .3s}
+.promo{background:var(--ink);color:#fff;font-size:13px;overflow:hidden;max-height:36px;transition:max-height .25s}
 .promo.hide{max-height:0}
-.promo .wrap{display:flex;align-items:center;justify-content:space-between;height:44px}
-.promo b{font-weight:600}
-
-.tabs{display:flex;gap:28px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.promo .wrap{display:flex;align-items:center;justify-content:center;height:36px;position:relative}
+.promo button{position:absolute;left:12px;opacity:.7}
+header.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.bar .logo{height:38px;width:auto;cursor:pointer}
+.icon-btn{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;position:relative;transition:background .15s}
+.icon-btn:hover{background:var(--soft)}
+.badge{position:absolute;top:3px;left:3px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--brand);color:#fff;font-size:10.5px;font-weight:600;display:none;place-items:center}
+.badge.on{display:grid}
+.desk-nav{display:none;gap:2px}
+.desk-nav button{padding:8px 14px;border-radius:8px;color:var(--muted);font-weight:500;transition:.15s}
+.desk-nav button:hover{color:var(--ink);background:var(--soft)}
+.desk-nav button.on{color:var(--brand)}
+.bar-side{display:flex;align-items:center;gap:4px}
+.tabs{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tabs button{padding:12px 0 10px;white-space:nowrap;color:var(--muted);font-weight:500;border-bottom:2.5px solid transparent;transition:.2s}
+.tabs button{padding:8px 0 10px;white-space:nowrap;color:var(--muted);font-weight:500;font-size:14px;border-bottom:2px solid transparent}
 .tabs button.on{color:var(--ink);font-weight:600;border-color:var(--brand)}
 
-main{padding-bottom:calc(var(--nav-h) + 32px + env(safe-area-inset-bottom))}
+main{padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom))}
 section{margin-top:28px}
-.sec-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}
-.sec-head h2{font-size:20px;margin:0;font-weight:700;letter-spacing:-.2px}
-.sec-head .more{color:var(--brand);font-weight:500;font-size:14px;display:flex;align-items:center;gap:2px}
-.view{display:none;animation:fade .35s ease}
-.view.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px;gap:12px}
+.sec-head h2{font-size:18px;margin:0;font-weight:700}
+.sec-head p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+.more{color:var(--brand);font-weight:500;font-size:14px;display:flex;align-items:center;gap:2px;white-space:nowrap}
+.view{display:none}
+.view.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.page-title{margin:20px 0 4px;font-size:22px;font-weight:700}
+.page-sub{margin:0 0 16px;color:var(--muted)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 20px;border-radius:12px;font-weight:600;transition:background .15s,border-color .15s;white-space:nowrap;text-decoration:none}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-dark)}
+.btn.white{background:#fff;color:var(--ink)}
+.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:#cfd6de}
+.btn.block{width:100%}
+.btn.sm{height:38px;padding:0 14px;font-size:14px;border-radius:10px}
 
 /* ---------- Hero ---------- */
-.hero-grid{display:grid;gap:12px;margin-top:20px}
-.hero{position:relative;border-radius:24px;overflow:hidden;background:#bfe8ea;min-height:220px;display:flex;align-items:stretch}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 30%}
-.hero .copy{position:relative;z-index:1;padding:24px;display:flex;flex-direction:column;justify-content:center;max-width:62%;gap:6px}
-.hero .eyebrow{display:inline-flex;align-self:flex-start;gap:6px;align-items:center;background:#fff;color:var(--brand);font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
-.hero h1{font-size:26px;line-height:1.35;margin:4px 0 0;font-weight:700;color:var(--brand-dark)}
-.hero p{margin:0;color:#24525a;font-size:14px}
-.hero .cta{margin-top:10px;align-self:flex-start}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(191,232,234,.97) 0%,rgba(191,232,234,.85) 40%,rgba(191,232,234,0) 75%)}
-.mini-banners{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.mini{border-radius:20px;padding:16px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;text-align:right;position:relative;overflow:hidden;transition:transform .2s}
-.mini:active{transform:scale(.98)}
-.mini b{font-size:16px;line-height:1.35;font-weight:700;position:relative;z-index:1}
-.mini small{font-size:12.5px;opacity:.8;position:relative;z-index:1}
-.mini .big{font-size:34px;font-weight:700;line-height:1;letter-spacing:-1px}
-.mini.sun{background:var(--sun);color:var(--sun-ink)}
-.mini.mint{background:var(--mint);color:#17603f}
-.mini .deco{position:absolute;bottom:-14px;left:-14px;width:90px;height:90px;opacity:.18}
+.hero-grid{display:grid;gap:12px;margin-top:16px}
+.hero{position:relative;border-radius:18px;overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:#fff;background:#2a3a40}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,25,30,.85) 0%,rgba(10,25,30,.4) 55%,rgba(10,25,30,.05) 100%)}
+.hero .copy{position:relative;z-index:1;padding:22px;display:flex;flex-direction:column;gap:6px;max-width:560px}
+.hero .eyebrow{font-size:13px;opacity:.9;display:flex;align-items:center;gap:6px}
+.hero h1{font-size:23px;line-height:1.45;margin:0;font-weight:700}
+.hero p{margin:0;opacity:.88;font-size:14px}
+.hero .actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.hero .btn.glass{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.side-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pcard{position:relative;border-radius:16px;overflow:hidden;min-height:150px;color:#fff;display:flex;align-items:flex-end;background:#2a3a40}
+.pcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover img{transform:scale(1.03)}
+.pcard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,25,30,.8),rgba(10,25,30,0) 65%)}
+.pcard span{position:relative;z-index:1;padding:14px;display:block}
+.pcard b{display:block;font-size:15px;line-height:1.4}
+.pcard small{opacity:.85;font-size:12.5px}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;font-weight:600;transition:transform .15s,background .2s,box-shadow .2s}
-.btn:active{transform:scale(.97)}
-.btn.primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(0,124,134,.25)}
-.btn.primary:hover{background:var(--brand-dark)}
-.btn.white{background:#fff;color:var(--brand)}
-.btn.ghost{background:var(--soft);color:var(--ink)}
-.btn.block{width:100%}
-.btn.sm{height:38px;padding:0 16px;font-size:14px}
-
-/* ---------- Pets (categories) ---------- */
-.pets{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 6px;margin:0 -16px;padding-inline:16px}
+/* ---------- Pets filter ---------- */
+.pets{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px 4px}
 .pets::-webkit-scrollbar{display:none}
-.pet{flex:none;width:92px;text-align:center;font-weight:500;font-size:14px}
-.pet .ph{width:92px;height:92px;border-radius:50%;overflow:hidden;margin-bottom:8px;position:relative;transition:transform .25s}
-.pet .ph::before{content:"";position:absolute;inset:8px;border-radius:46% 54% 50% 50%;background:var(--c);z-index:0}
-.pet img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 2px var(--c)}
-.pet.on .ph img{box-shadow:0 0 0 3px var(--brand)}
-.pet.on{color:var(--brand)}
-.pet:hover .ph{transform:translateY(-3px)}
+.pet{flex:none;width:76px;text-align:center;font-weight:500;font-size:13px;color:var(--muted);line-height:1.4}
+.pet img,.pet .all{width:76px;height:76px;border-radius:50%;object-fit:cover;margin:0 auto 6px;border:2px solid transparent;padding:2px;background:#fff;transition:border-color .15s}
+.pet .all{display:grid;place-items:center;background:var(--soft);color:var(--brand);border-color:var(--soft)}
+.pet.on{color:var(--ink);font-weight:600}
+.pet.on img,.pet.on .all{border-color:var(--brand)}
 
 /* ---------- Services ---------- */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.svc{background:var(--soft);border-radius:var(--r);padding:16px;text-align:right;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent}
-.svc:hover{background:#fff;border-color:var(--line);box-shadow:var(--shadow);transform:translateY(-2px)}
-.svc .ic{width:44px;height:44px;border-radius:14px;background:#fff;color:var(--brand);display:grid;place-items:center}
-.svc h3{margin:0;font-size:15px;font-weight:600;line-height:1.4}
-.svc p{margin:0;color:var(--muted);font-size:13px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.svc .price{margin-top:auto;font-size:13px;color:var(--brand);font-weight:600}
-.svc.feature{grid-column:1/-1;background:var(--brand);color:#fff;flex-direction:row;align-items:center;gap:14px}
-.svc.feature .ic{background:rgba(255,255,255,.16);color:#fff;width:52px;height:52px}
-.svc.feature p{color:rgba(255,255,255,.82)}
-.svc.feature .price{color:#fff;margin:0}
-.svc.feature:hover{background:var(--brand-dark)}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.svc{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:box-shadow .2s,border-color .2s}
+.svc:hover{border-color:#d5dce3;box-shadow:0 6px 20px rgba(20,40,60,.07)}
+.svc .ph{aspect-ratio:16/9;background:var(--soft);overflow:hidden;display:block;width:100%}
+.svc .ph img{width:100%;height:100%;object-fit:cover}
+.svc .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.svc h3{margin:0;font-size:15.5px;font-weight:600}
+.svc p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.svc .ft{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px}
+.from{font-size:13px;color:var(--muted)}
+.from b{color:var(--ink);font-size:15px}
+.link-btn{color:var(--brand);font-weight:600;font-size:14px;display:flex;align-items:center;gap:2px}
+.svc-list{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc-row{display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);width:100%;background:#fff;transition:background .15s}
+.svc-row:last-child{border:0}
+.svc-row:hover{background:var(--soft)}
+.svc-row .ic{width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.svc-row .tx{flex:1;min-width:0}
+.svc-row b{display:block;font-size:14.5px;font-weight:600}
+.svc-row small{display:block;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{color:var(--faint)}
+
+/* ---------- Vets ---------- */
+.vets{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 2px}
+.vets::-webkit-scrollbar{display:none}
+.vets.grid{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin:0;padding:0;overflow:visible}
+.vet{border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;background:#fff}
+.vet .top{display:flex;gap:12px;align-items:center}
+.av{width:52px;height:52px;border-radius:50%;background:var(--tint);color:var(--brand-dark);display:grid;place-items:center;font-weight:700;font-size:19px;flex:none}
+.av.sm{width:40px;height:40px;font-size:15px}
+.vet b{display:block;font-size:15px}
+.vet small{color:var(--muted);font-size:13px}
+.vet .days-av{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.vet .days-av i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+.vet .mine{font-size:12.5px;color:var(--brand-dark);font-weight:500;background:var(--tint);padding:4px 10px;border-radius:8px;align-self:flex-start}
+.vet .btn{margin-top:auto}
 
 /* ---------- Products ---------- */
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:14px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:16px 0 14px}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+.chip{flex:none;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;font-weight:500;color:var(--muted);background:#fff}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.prod{text-align:right;display:flex;flex-direction:column;border-radius:var(--r);transition:transform .2s}
-.prod .thumb{aspect-ratio:1/1;border-radius:var(--r);background:var(--c);display:grid;place-items:center;position:relative;overflow:hidden}
-.prod .thumb svg.art{width:58%;height:58%;transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
-.prod:hover .thumb svg.art{transform:scale(1.06) rotate(-2deg)}
-.prod .fav{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--muted);transition:.2s}
-.prod .fav svg{width:18px;height:18px}
-.prod .fav.on{color:#e5484d}
-.prod .fav.on svg{fill:#e5484d}
-.prod .tag{position:absolute;top:12px;left:12px;background:#fff;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;color:var(--brand)}
-.prod .tag.sale{background:#e5484d;color:#fff}
-.prod .meta{padding:10px 2px 0;display:flex;flex-direction:column;gap:2px;flex:1}
-.prod .brand{font-size:12px;color:var(--muted)}
-.prod h4{margin:0;font-size:14.5px;font-weight:600;line-height:1.45}
-.prod .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px}
-.money{font-weight:700;font-size:16px}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px}
+.prod{display:flex;flex-direction:column}
+.prod .thumb{aspect-ratio:1/1;border-radius:12px;background:var(--soft);position:relative;overflow:hidden;display:block;width:100%}
+.prod .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod:hover .thumb img{transform:scale(1.03)}
+.prod .fav{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;color:var(--muted)}
+.prod .fav svg{width:17px;height:17px}
+.prod .fav.on{color:var(--danger)}
+.prod .fav.on svg{fill:var(--danger)}
+.prod .tag{position:absolute;bottom:8px;right:8px;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--danger);color:#fff}
+.prod .meta{padding:8px 2px 0;display:flex;flex-direction:column;gap:1px;flex:1}
+.prod .cat{font-size:12px;color:var(--faint)}
+.prod h4{margin:0;font-size:14px;font-weight:500;line-height:1.5}
+.prod .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;gap:8px}
+.money{font-weight:700;font-size:15px;white-space:nowrap}
 .money small{font-weight:500;font-size:12px;color:var(--muted);margin-inline-start:2px}
-.money s{font-weight:400;font-size:12.5px;color:var(--muted);margin-inline-start:6px}
-.add{width:38px;height:38px;border-radius:12px;background:var(--tint);color:var(--brand);display:grid;place-items:center;transition:.2s}
-.add:hover{background:var(--brand);color:#fff}
-.add.pop{animation:pop .4s}
-@keyframes pop{40%{transform:scale(1.2);background:var(--accent);color:#fff}}
+.money s{font-weight:400;font-size:12px;color:var(--faint);margin-inline-start:6px}
+.add{height:34px;padding:0 12px;border-radius:9px;border:1px solid var(--line);color:var(--ink);display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;transition:.15s;background:#fff;white-space:nowrap}
+.add:hover{border-color:var(--brand);color:var(--brand)}
+.add.done{background:var(--brand);border-color:var(--brand);color:#fff}
 
-/* ---------- Trust strip ---------- */
-.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.trust div{display:flex;align-items:center;gap:10px;padding:14px;border-radius:16px;border:1px solid var(--line);font-size:13.5px;font-weight:500}
-.trust svg{color:var(--brand)}
-
-.vet-card{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,#0a8f99,#005f67);color:#fff;border-radius:24px;padding:20px;position:relative;overflow:hidden}
-.vet-card h3{margin:0 0 4px;font-size:18px}
-.vet-card p{margin:0 0 12px;opacity:.85;font-size:14px}
-.vet-card img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.25);flex:none}
+.info-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.info-strip div{background:#fff;display:flex;align-items:center;gap:10px;padding:14px;font-size:13.5px;font-weight:500}
+.info-strip svg{color:var(--brand)}
 
 /* ---------- Bottom nav ---------- */
-nav.bottom{position:fixed;bottom:0;inset-inline:0;z-index:45;padding:0 12px env(safe-area-inset-bottom)}
-nav.bottom .in{max-width:520px;margin:0 auto 10px;height:var(--nav-h);background:#fff;border-radius:24px;box-shadow:0 -1px 0 var(--line),0 10px 40px rgba(16,40,60,.12);display:grid;grid-template-columns:repeat(5,1fr);align-items:center}
-nav.bottom button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:#9aa5b1;font-weight:500;position:relative;height:100%;justify-content:center;transition:color .2s}
+nav.bottom{position:fixed;bottom:0;inset-inline:0;z-index:45;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav.bottom .in{max-width:560px;margin:0 auto;height:var(--nav-h);display:grid;grid-template-columns:repeat(5,1fr);align-items:center}
+nav.bottom button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--faint);font-weight:500;position:relative;height:100%;justify-content:center}
 nav.bottom button.on{color:var(--brand)}
-nav.bottom button .dot{position:absolute;top:8px;width:5px;height:5px;border-radius:50%;background:var(--brand);opacity:0;transition:.2s}
-nav.bottom button.on .dot{opacity:1}
-nav.bottom button .badge{top:10px;left:calc(50% - 22px)}
-.wa{position:fixed;z-index:44;left:16px;bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:18px;background:#25a36f;color:#fff;display:grid;place-items:center;box-shadow:0 8px 20px rgba(37,163,111,.35);transition:transform .2s}
-.wa:hover{transform:translateY(-2px)}
-.wa svg{width:28px;height:28px;fill:#fff;stroke:none}
+nav.bottom button .badge{top:6px;left:calc(50% - 20px)}
+.wa-fab{position:fixed;z-index:44;left:16px;bottom:calc(var(--nav-h) + 16px + env(safe-area-inset-bottom));width:52px;height:52px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.wa-fab svg{width:27px;height:27px}
+svg.wa-ic{fill:currentColor;stroke:none}
 
-/* ---------- Sheets / drawers ---------- */
-.scrim{position:fixed;inset:0;background:rgba(15,25,35,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .3s}
+/* ---------- Sheets ---------- */
+.scrim{position:fixed;inset:0;background:rgba(15,25,35,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
 .scrim.on{opacity:1;pointer-events:auto}
-.sheet{position:fixed;z-index:61;background:#fff;inset-inline:0;bottom:0;max-height:92vh;border-radius:28px 28px 0 0;transform:translateY(105%);transition:transform .42s cubic-bezier(.2,.9,.3,1);display:flex;flex-direction:column;overflow:hidden}
+.sheet{position:fixed;z-index:61;background:#fff;inset-inline:0;bottom:0;max-height:92vh;border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.3,1);display:flex;flex-direction:column;overflow:hidden}
 .sheet.on{transform:none}
-.sheet .grab{width:44px;height:5px;border-radius:3px;background:#d7dee6;margin:10px auto 0;flex:none}
-.sheet .body{overflow-y:auto;padding:8px 20px 20px;flex:1;overscroll-behavior:contain}
-.sheet .foot{padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;flex:none;background:#fff}
-.sheet-head{display:flex;align-items:center;justify-content:space-between;padding:6px 0 10px}
-.sheet-head h3{margin:0;font-size:18px}
-.close{width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center}
-
-.pd-art{aspect-ratio:16/11;border-radius:22px;background:var(--c);display:grid;place-items:center;margin-bottom:16px}
-.pd-art svg{width:42%;height:auto}
-.pd-title{font-size:20px;margin:2px 0 6px;font-weight:700}
-.pd-desc{color:var(--muted);margin:10px 0 16px}
-.opt-label{font-weight:600;font-size:14px;margin:16px 0 8px}
+.sheet .grab{width:40px;height:4px;border-radius:2px;background:#d7dee6;margin:8px auto 0;flex:none}
+.sheet .body{overflow-y:auto;padding:0 20px 20px;flex:1;overscroll-behavior:contain}
+.sheet .foot{padding:12px 20px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;flex:none;background:#fff}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;padding:10px 0 12px;position:sticky;top:0;background:#fff;z-index:2}
+.sheet-head h3{margin:0;font-size:17px}
+.close{width:36px;height:36px;border-radius:50%;background:var(--soft);display:grid;place-items:center}
+.lbl{font-weight:600;font-size:14px;margin:18px 0 8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lbl small{font-weight:400;color:var(--muted);font-size:12.5px}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{height:40px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);font-weight:500;font-size:14px;transition:.15s}
-.opt.on{border-color:var(--brand);background:var(--tint);color:var(--brand-dark)}
-.qty{display:flex;align-items:center;gap:4px;background:var(--soft);border-radius:999px;padding:4px;height:46px}
-.qty button{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:18px;font-weight:600}
-.qty span{min-width:28px;text-align:center;font-weight:600}
+.opt{height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line);font-weight:500;font-size:14px;background:#fff;transition:.12s;display:inline-flex;align-items:center;gap:8px}
+.opt.on{border-color:var(--brand);background:var(--tint);color:var(--brand-dark);box-shadow:inset 0 0 0 1px var(--brand)}
+.opt img{width:26px;height:26px;border-radius:50%;object-fit:cover;margin-inline-start:-6px}
+.qty{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:12px;padding:3px;height:46px}
+.qty button{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-size:18px;font-weight:500}
+.qty button:hover{background:var(--soft)}
+.qty span{min-width:26px;text-align:center;font-weight:600}
 
-.svc-hero{border-radius:22px;padding:20px;background:var(--tint);display:flex;gap:14px;align-items:center;margin-bottom:6px}
-.svc-hero .ic{width:56px;height:56px;border-radius:18px;background:#fff;color:var(--brand);display:grid;place-items:center;flex:none}
-.svc-hero .ic svg{width:28px;height:28px}
-.svc-hero h3{margin:0;font-size:18px}
-.svc-hero p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
-.incl{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.incl li{display:flex;gap:10px;align-items:center;font-size:14px}
-.incl li svg{color:var(--accent);width:18px;height:18px}
+.pd-img{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--soft);margin-bottom:14px}
+.pd-img img{width:100%;height:100%;object-fit:cover}
+.pd-title{font-size:19px;margin:2px 0 4px;font-weight:700}
+.pd-desc{color:var(--muted);margin:10px 0 0}
+.bullets{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.bullets li{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
+.bullets li svg{color:var(--brand);width:18px;height:18px}
+.wa-inline{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:13.5px;text-decoration:none;text-align:right}
+.wa-inline svg{color:var(--wa)}
+.wa-inline b{color:var(--wa);margin-inline-start:auto;white-space:nowrap}
+
+.svc-top{display:flex;gap:14px;align-items:center;margin-bottom:4px}
+.svc-top img,.svc-top .ic{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none;background:var(--tint);color:var(--brand);display:grid;place-items:center}
+.svc-top h3{margin:0;font-size:16.5px;line-height:1.4}
+.svc-top p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+.vet-pick{display:grid;gap:8px}
+.vet-opt{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;width:100%;background:#fff;transition:.12s}
+.vet-opt.on{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand);background:var(--tint)}
+.vet-opt .tx{flex:1;min-width:0}
+.vet-opt b{display:block;font-size:14.5px;font-weight:600}
+.vet-opt small{color:var(--muted);font-size:12.5px}
+.vet-opt .pill{font-size:11.5px;font-weight:600;color:var(--brand-dark);background:#fff;border:1px solid #cfe7ea;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.radio{width:20px;height:20px;border-radius:50%;border:1.5px solid #c3ccd5;flex:none;position:relative}
+.on>.radio{border-color:var(--brand)}
+.on>.radio::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--brand)}
 .days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .days::-webkit-scrollbar{display:none}
-.day{flex:none;width:62px;height:74px;border-radius:16px;border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:.15s}
-.day small{font-size:11.5px;color:var(--muted)}
-.day b{font-size:19px}
+.day{flex:none;width:60px;height:68px;border-radius:12px;border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff}
+.day small{font-size:11px;color:var(--muted)}
+.day b{font-size:18px;line-height:1.2}
 .day.on{background:var(--brand);border-color:var(--brand);color:#fff}
-.day.on small{color:rgba(255,255,255,.8)}
+.day.on small{color:rgba(255,255,255,.85)}
 .times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.times .opt{padding:0;direction:ltr}
-.times .opt:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
-.field{display:flex;align-items:center;gap:10px;height:50px;border:1.5px solid var(--line);border-radius:14px;padding:0 14px;transition:border .2s}
-.field:focus-within{border-color:var(--brand)}
+.times .opt{padding:0;justify-content:center;font-size:13.5px}
+.times .opt:disabled{color:#b9c1ca;background:var(--soft);border-color:var(--soft);cursor:not-allowed}
+.field{display:flex;align-items:center;gap:10px;height:48px;border:1px solid var(--line);border-radius:12px;padding:0 14px;background:#fff}
+.field:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px rgba(0,124,134,.12)}
 .field input{border:0;outline:0;flex:1;background:none;min-width:0}
-.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:14px;background:var(--soft);margin-top:12px;text-align:right;width:100%}
-.toggle .sw{width:46px;height:28px;border-radius:14px;background:#cfd8e1;position:relative;transition:.2s;flex:none}
-.toggle .sw::after{content:"";position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
-.toggle.on .sw{background:var(--accent)}
-.toggle.on .sw::after{right:21px}
+.check-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin-top:14px;width:100%}
+.check-row .box{width:20px;height:20px;border-radius:6px;border:1.5px solid #c3ccd5;display:grid;place-items:center;flex:none;color:#fff}
+.check-row.on{border-color:var(--brand)}
+.check-row.on .box{background:var(--brand);border-color:var(--brand)}
+.check-row .box svg{width:14px;height:14px;stroke-width:2.6;opacity:0}
+.check-row.on .box svg{opacity:1}
+.check-row .tx{flex:1}
+.check-row b{display:block;font-size:14px;font-weight:600}
+.check-row small{color:var(--muted);font-size:12.5px}
 
-/* Cart */
 .cart-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-.cart-item .th{width:68px;height:68px;border-radius:16px;background:var(--c);display:grid;place-items:center;flex:none}
-.cart-item .th svg{width:60%;height:60%}
+.cart-item img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:var(--soft)}
 .cart-item .info{flex:1;min-width:0}
-.cart-item h5{margin:0;font-size:14px;font-weight:600}
+.cart-item h5{margin:0;font-size:14px;font-weight:500}
 .cart-item .sub{font-size:12.5px;color:var(--muted)}
-.cart-item .qty{height:36px;padding:3px}
+.cart-item .qty{height:36px;padding:2px}
 .cart-item .qty button{width:30px;height:30px;font-size:16px}
 .sum{display:grid;gap:8px;margin-top:16px;font-size:14px}
 .sum div{display:flex;justify-content:space-between}
-.sum .tot{font-weight:700;font-size:17px;padding-top:10px;border-top:1px dashed var(--line)}
-.empty{text-align:center;padding:40px 10px;color:var(--muted)}
-.empty .circle{width:96px;height:96px;border-radius:50%;background:var(--tint);color:var(--brand);display:grid;place-items:center;margin:0 auto 14px}
-.empty .circle svg{width:40px;height:40px}
-.empty h4{color:var(--ink);margin:0 0 4px;font-size:17px}
+.sum .tot{font-weight:700;font-size:16px;padding-top:10px;border-top:1px solid var(--line)}
+.empty{text-align:center;padding:36px 10px;color:var(--muted)}
+.empty .circle{width:72px;height:72px;border-radius:50%;background:var(--soft);color:var(--faint);display:grid;place-items:center;margin:0 auto 12px}
+.empty .circle svg{width:30px;height:30px}
+.empty h4{color:var(--ink);margin:0 0 4px;font-size:16px}
 
-.success{text-align:center;padding:24px 8px 8px}
-.success .ok{width:88px;height:88px;border-radius:50%;background:var(--mint);color:var(--accent);display:grid;place-items:center;margin:0 auto 16px;animation:pop .6s}
-.success .ok svg{width:44px;height:44px;stroke-width:2.4}
-.success h3{margin:0 0 6px;font-size:21px}
-.success p{color:var(--muted);margin:0 0 16px}
-.ticket{background:var(--soft);border-radius:18px;padding:16px;text-align:right;display:grid;gap:8px;font-size:14px}
-.ticket div{display:flex;justify-content:space-between;gap:10px}
-.ticket span{color:var(--muted)}
+.success{text-align:center;padding:20px 4px 4px}
+.success .ok{width:60px;height:60px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;margin:0 auto 14px}
+.success .ok svg{width:30px;height:30px;stroke-width:2.4}
+.success h3{margin:0 0 4px;font-size:19px}
+.success p{color:var(--muted);margin:0 0 16px;font-size:14px}
+.ticket{border:1px solid var(--line);border-radius:14px;text-align:right;font-size:14px;overflow:hidden}
+.ticket div{display:flex;justify-content:space-between;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
+.ticket div:last-child{border:0}
+.ticket span{color:var(--muted);white-space:nowrap}
 
 /* Search */
-.search-panel{position:fixed;inset:0;z-index:70;background:#fff;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.25s;overflow-y:auto}
-.search-panel.on{opacity:1;transform:none;pointer-events:auto}
+.search-panel{position:fixed;inset:0;z-index:70;background:#fff;opacity:0;pointer-events:none;transition:opacity .2s;overflow-y:auto}
+.search-panel.on{opacity:1;pointer-events:auto}
 .search-panel .head{display:flex;gap:10px;align-items:center;padding:12px 0;position:sticky;top:0;background:#fff}
 .search-panel .field{flex:1}
-.res{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);width:100%;text-align:right}
-.res .th{width:48px;height:48px;border-radius:14px;background:var(--c);display:grid;place-items:center;color:var(--brand);flex:none}
-.res .th svg.art{width:65%;height:65%}
+.res{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);width:100%}
+.res img,.res .ic{width:48px;height:48px;border-radius:10px;object-fit:cover;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.res .ic.av{border-radius:50%;font-size:17px}
 .res small{color:var(--muted);display:block;font-size:12.5px}
-.hints{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 
-/* Menu drawer */
-.drawer{position:fixed;z-index:61;top:0;bottom:0;right:0;width:min(320px,86vw);background:#fff;transform:translateX(105%);transition:transform .38s cubic-bezier(.2,.9,.3,1);padding:20px;display:flex;flex-direction:column;gap:4px}
+/* Drawer */
+.drawer{position:fixed;z-index:61;top:0;bottom:0;right:0;width:min(320px,86vw);background:#fff;transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.3,1);padding:20px;display:flex;flex-direction:column;gap:2px}
 .drawer.on{transform:none}
-.drawer .logo{height:52px;width:auto;align-self:flex-start;margin-bottom:16px}
-.drawer a,.drawer button.link{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;color:inherit;text-decoration:none;font-weight:500;text-align:right}
+.drawer .logo{height:48px;width:auto;align-self:flex-start;margin-bottom:16px}
+.drawer a,.drawer button.link{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;text-decoration:none;font-weight:500;width:100%}
 .drawer a:hover,.drawer button.link:hover{background:var(--soft)}
-.drawer svg{color:var(--brand)}
+.drawer svg{color:var(--muted)}
 .drawer .foot{margin-top:auto;font-size:13px;color:var(--muted);line-height:1.8}
 
 /* Account */
-.profile{display:flex;gap:14px;align-items:center;padding:20px;border-radius:24px;background:var(--soft)}
-.avatar{width:60px;height:60px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;flex:none}
-.my-pets{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none}
-.my-pet{flex:none;display:flex;gap:10px;align-items:center;padding:10px 14px 10px 10px;border:1px solid var(--line);border-radius:18px}
-.my-pet img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-.my-pet small{display:block;color:var(--muted);font-size:12px}
-.my-pet.add-pet{border-style:dashed;color:var(--brand);font-weight:500}
-.appt{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:18px;margin-bottom:10px}
-.appt .date{width:56px;height:60px;border-radius:14px;background:var(--tint);color:var(--brand-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
-.appt .date b{font-size:20px;line-height:1}
-.appt .date small{font-size:11px}
-.appt h5{margin:0;font-size:14.5px}
+.profile{display:flex;gap:14px;align-items:center;padding:4px 0}
+.profile .av{width:56px;height:56px;background:var(--brand);color:#fff}
+.my-pets{display:grid;gap:10px}
+.my-pet{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:var(--r);width:100%;background:#fff}
+.my-pet:hover{border-color:#d5dce3}
+.my-pet>img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none}
+.my-pet .tx{flex:1;min-width:0}
+.my-pet b{font-size:15px}
+.my-pet small{display:block;color:var(--muted);font-size:12.5px}
+.my-pet .doc{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:12.5px;color:var(--brand-dark);font-weight:500}
+.my-pet .doc .av{width:22px;height:22px;font-size:11px}
+.add-pet{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border:1px dashed #c9d2db;border-radius:var(--r);color:var(--brand);font-weight:600;width:100%;min-height:82px}
+.appt{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px}
+.appt .date{width:54px;height:58px;border-radius:10px;background:var(--soft);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+.appt .date b{font-size:19px;line-height:1.1}
+.appt .date small{font-size:11px;color:var(--muted)}
+.appt .tx{flex:1;min-width:0}
+.appt h5{margin:0;font-size:14.5px;font-weight:600}
 .appt p{margin:0;font-size:12.5px;color:var(--muted)}
-.status{margin-inline-start:auto;font-size:12px;font-weight:600;color:var(--accent);background:var(--mint);padding:4px 10px;border-radius:999px;white-space:nowrap}
-.menu-list{border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.menu-list button{display:flex;width:100%;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line);text-align:right;font-weight:500}
-.menu-list button:last-child{border:0}
-.menu-list button svg:last-child{margin-inline-start:auto;color:#b5bec8;width:18px;height:18px}
-.menu-list button svg:first-child{color:var(--brand)}
+.status{font-size:12px;font-weight:600;color:var(--accent);background:#e8f6ef;padding:3px 9px;border-radius:6px;white-space:nowrap}
+.menu-list{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.menu-list>*{display:flex;width:100%;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);font-weight:500;text-decoration:none}
+.menu-list>*:last-child{border:0}
+.menu-list>*:hover{background:var(--soft)}
+.menu-list>*>svg:first-child{color:var(--muted)}
+.menu-list .chev{margin-inline-start:auto}
 
-.toast{position:fixed;z-index:80;bottom:calc(var(--nav-h) + 28px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;font-weight:500;opacity:0;transition:.3s;pointer-events:none;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.toast{position:fixed;z-index:80;bottom:calc(var(--nav-h) + 20px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,10px);background:var(--ink);color:#fff;padding:11px 16px;border-radius:10px;font-size:14px;font-weight:500;opacity:0;transition:.25s;pointer-events:none;display:flex;gap:8px;align-items:center;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
-.toast svg{color:#6ee7b7;width:18px;height:18px}
+.toast svg{width:18px;height:18px}
 
-footer.site{margin-top:48px;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-footer.site .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
-footer.site img{height:40px}
-.proto{font-size:12px;background:var(--soft);padding:4px 10px;border-radius:999px}
+footer.site{margin-top:48px;padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center}
+footer.site img{height:36px}
+footer.site a{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 
 /* ---------- Tablet ---------- */
 @media (min-width:700px){
   .wrap{padding:0 28px}
-  .pets{margin:0 -28px;padding-inline:28px;gap:26px}
-  .pet{width:110px}.pet .ph{width:110px;height:110px}
-  .hero-grid{grid-template-columns:1.6fr 1fr}
-  .mini-banners{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
-  .hero{min-height:300px}
-  .hero h1{font-size:32px}
-  .svc-grid{grid-template-columns:repeat(3,1fr)}
-  .svc.feature{grid-column:span 3}
-  .prod-grid{grid-template-columns:repeat(3,1fr);gap:18px}
-  .trust{grid-template-columns:repeat(4,1fr)}
-  .sheet{left:50%;right:auto;width:560px;bottom:auto;top:50%;max-height:86vh;border-radius:28px;transform:translate(-50%,-46%) scale(.96);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.2,.9,.3,1),opacity .25s}
+  .pets,.vets{margin:0 -28px;padding-inline:28px}
+  .vets.grid{margin:0;padding:0}
+  .pet{width:90px}.pet img,.pet .all{width:90px;height:90px}
+  .hero-grid{grid-template-columns:1.7fr 1fr}
+  .side-cards{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+  .hero{min-height:360px}
+  .hero h1{font-size:28px}
+  .hero .copy{padding:28px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(3,1fr);gap:24px 16px}
+  .info-strip{grid-template-columns:repeat(4,1fr)}
+  .my-pets{grid-template-columns:1fr 1fr}
+  .sheet{left:50%;right:auto;width:540px;bottom:auto;top:50%;max-height:88vh;border-radius:18px;transform:translate(-50%,-48%);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .2s}
   .sheet.on{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}
   .sheet .grab{display:none}
-  .sheet .body{padding-top:16px}
-  .vet-card{padding:28px 32px}
-  .vet-card img{width:150px;height:150px}
-  .pd-art{aspect-ratio:2/1}
-  .pd-art svg{width:auto;height:70%}
+  .sheet .body{padding-top:6px}
+  .pd-img{aspect-ratio:16/10}
 }
 /* ---------- Desktop ---------- */
 @media (min-width:1024px){
   .desk-nav{display:flex}
-  .bar{height:76px}
-  .bar .logo{height:48px}
+  .bar{height:72px}
+  .bar .logo{height:46px}
   .menu-btn{display:none!important}
   .tabs{display:none}
   nav.bottom{display:none}
   main{padding-bottom:0}
-  .wa{bottom:28px;left:28px}
-  .toast{bottom:32px}
-  .hero{min-height:380px}
-  .hero .copy{padding:48px;max-width:55%}
-  .hero h1{font-size:42px}
+  .wa-fab{bottom:24px;left:24px}
+  .toast{bottom:28px}
+  .hero{min-height:440px}
+  .hero .copy{padding:40px}
+  .hero h1{font-size:36px}
   .hero p{font-size:16px}
-  section{margin-top:48px}
-  .sec-head h2{font-size:24px}
-  .svc-grid{grid-template-columns:repeat(4,1fr);gap:16px}
-  .svc.feature{grid-column:span 2;grid-row:span 1}
-  .prod-grid{grid-template-columns:repeat(4,1fr);gap:22px}
-  .pets{justify-content:flex-start;gap:36px}
-  .pet{width:130px;font-size:15px}.pet .ph{width:130px;height:130px}
+  section{margin-top:44px}
+  .sec-head h2{font-size:22px}
+  .svc-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .prod-grid{grid-template-columns:repeat(4,1fr);gap:28px 20px}
+  .vets{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);margin:0;padding:0;overflow:visible}
+  .pets{gap:28px;margin:0;padding-inline:0}
+  .pet{width:104px;font-size:14px}.pet img,.pet .all{width:104px;height:104px}
+  .services-cols{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
+  .services-cols .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .services-cols>div:last-child{position:sticky;top:96px}
   .search-panel .wrap{max-width:720px}
 }
+@media (max-width:1023px){ .services-cols>div:last-child{margin-top:28px} }
 </style>
 </head>
 <body>
 
 <div class="promo" id="promo">
   <div class="wrap">
-    <span>أهلاً بك 👋 خصم <b>10%</b> على أول طلب بالكود <b>PAWS10</b></span>
-    <button class="icon-btn" style="width:32px;height:32px;color:#fff" onclick="promo.classList.add('hide')" aria-label="إغلاق"><svg class="i" style="width:18px;height:18px"><use href="#x"/></svg></button>
+    <span>خصم 10% على أول طلب من المتجر · الكود <b>PAWS10</b></span>
+    <button onclick="promo.classList.add('hide')" aria-label="إغلاق"><svg class="i sm"><use href="#x"/></svg></button>
   </div>
 </div>
 
@@ -353,27 +394,27 @@ footer.site img{height:40px}
     <div class="bar">
       <div class="bar-side">
         <button class="icon-btn menu-btn" onclick="openDrawer()" aria-label="القائمة"><svg class="i"><use href="#menu"/></svg></button>
-        <img class="logo" src="logo.png" alt="الكفوف الأليفة" onclick="go('home')" style="cursor:pointer">
+        <img class="logo" src="logo.png" alt="الكفوف الأليفة" onclick="go('home')">
       </div>
-      <nav class="desk-nav" id="deskNav">
+      <nav class="desk-nav">
         <button data-v="home">الرئيسية</button>
         <button data-v="services">الخدمات</button>
+        <button data-v="vets">أطباؤنا</button>
         <button data-v="store">المتجر</button>
-        <button data-v="fav">المفضلة</button>
         <button data-v="account">حسابي</button>
       </nav>
       <div class="bar-side">
         <button class="icon-btn" onclick="openSearch()" aria-label="بحث"><svg class="i"><use href="#search"/></svg></button>
-        <button class="icon-btn soft" onclick="openCart()" aria-label="السلة"><svg class="i"><use href="#bag"/></svg><span class="badge" data-cart-count>0</span></button>
+        <button class="icon-btn" onclick="go('fav')" aria-label="المفضلة"><svg class="i"><use href="#heart"/></svg></button>
+        <button class="icon-btn" onclick="openCart()" aria-label="السلة"><svg class="i"><use href="#bag"/></svg><span class="badge" data-cart-count>0</span></button>
       </div>
     </div>
-    <div class="tabs" id="tabs">
+    <div class="tabs">
       <button data-v="home">الرئيسية</button>
-      <button data-v="services">الخدمات البيطرية</button>
+      <button data-v="services">الخدمات</button>
+      <button data-v="vets">أطباؤنا</button>
       <button data-v="store">المتجر</button>
-      <button data-jump="offers">عروض أكتوبر</button>
-      <button data-svc="grooming">الترويش</button>
-      <button data-svc="boarding">الفندقة</button>
+      <button data-v="account">مواعيدي</button>
     </div>
   </div>
 </header>
@@ -384,29 +425,38 @@ footer.site img{height:40px}
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero">
-        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=1200&q=75&auto=format&fit=crop" alt="">
+        <img src="photos/slide-cat-1200.webp" alt="فحص قطة على طاولة الكشف">
         <div class="copy">
-          <span class="eyebrow"><svg class="i" style="width:14px;height:14px"><use href="#pin"/></svg>الدمام</span>
-          <h1>رعاية بيطرية متكاملة لأليفك</h1>
-          <p>من الكشف الدوري حتى الجراحة، مع استلام وتوصيل من البيت.</p>
-          <button class="btn primary cta" onclick="openService('exam')">احجز موعداً</button>
+          <span class="eyebrow"><svg class="i sm"><use href="#pin"/></svg>عيادة الكفوف الأليفة · الدمام</span>
+          <h1>رعاية بيطرية متكاملة للقطط والكلاب وكل الأليفة</h1>
+          <p>احجز موعدك مع طبيب أليفك خلال دقيقة.</p>
+          <div class="actions">
+            <button class="btn white" onclick="openService('exam')">احجز موعداً</button>
+            <a class="btn glass" href="#" data-wa="مرحباً، أرغب في الاستفسار عن خدمات العيادة"><svg class="i sm wa-ic"><use href="#wa"/></svg>واتساب</a>
+          </div>
         </div>
       </div>
-      <div class="mini-banners">
-        <button class="mini sun" onclick="openService('grooming')">
-          <small>مواعيد</small>
-          <b>الترويش<br>والاستحمام</b>
-          <small style="font-weight:600;opacity:1">احجز الآن ←</small>
-          <svg class="deco" viewBox="0 0 24 24"><use href="#paw"/></svg>
+      <div class="side-cards">
+        <button class="pcard" onclick="openService('grooming')">
+          <img src="photos/grooming-1000.webp" alt="">
+          <span><b>الترويش والعناية</b><small>تحت إشراف بيطري</small></span>
         </button>
-        <button class="mini mint" onclick="go('store')">
-          <small>عروض أكتوبر</small>
-          <span><span class="big">25%</span> <b>خصم</b></span>
-          <small>على أطعمة القطط والكلاب</small>
-          <svg class="deco" viewBox="0 0 24 24"><use href="#paw"/></svg>
+        <button class="pcard" onclick="openService('pickup')">
+          <img src="photos/carrier-400.webp" alt="">
+          <span><b>استلام وتوصيل من البيت</b><small>في الدمام وما حولها</small></span>
         </button>
       </div>
     </div>
+
+    <section>
+      <div class="sec-head"><div><h2>خدماتنا</h2></div><button class="more" onclick="go('services')">كل الخدمات<svg class="i sm"><use href="#chev"/></svg></button></div>
+      <div class="svc-grid" id="homeSvc"></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div><h2>أطباؤنا</h2><p>احجز مع الطبيب الذي يتابع حالة أليفك.</p></div><button class="more" onclick="go('vets')">الفريق<svg class="i sm"><use href="#chev"/></svg></button></div>
+      <div class="vets" id="homeVets"></div>
+    </section>
 
     <section>
       <div class="sec-head"><h2>تسوّق حسب الأليف</h2></div>
@@ -414,32 +464,16 @@ footer.site img{height:40px}
     </section>
 
     <section>
-      <div class="sec-head"><h2>خدماتنا</h2><button class="more" onclick="go('services')">عرض الكل <svg class="i" style="width:18px;height:18px"><use href="#chev"/></svg></button></div>
-      <div class="svc-grid" id="homeSvc"></div>
-    </section>
-
-    <section id="offers">
-      <div class="sec-head"><h2>الأكثر طلباً</h2><button class="more" onclick="go('store')">المتجر <svg class="i" style="width:18px;height:18px"><use href="#chev"/></svg></button></div>
+      <div class="sec-head"><div><h2>مختارات أطبائنا</h2><p>منتجات ننصح بها في العيادة.</p></div><button class="more" onclick="go('store')">المتجر<svg class="i sm"><use href="#chev"/></svg></button></div>
       <div class="prod-grid" id="homeProds"></div>
     </section>
 
     <section>
-      <div class="vet-card">
-        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=70&auto=format&fit=crop" alt="">
-        <div>
-          <h3>منتجات يختارها أطباؤنا</h3>
-          <p>كل منتج في المتجر مختار بعناية من فريقنا البيطري، ويصل لباب بيتك.</p>
-          <button class="btn white sm" onclick="go('store')">تصفّح المتجر</button>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="trust">
+      <div class="info-strip">
         <div><svg class="i"><use href="#truck"/></svg>استلام وتوصيل من البيت</div>
-        <div><svg class="i"><use href="#shield"/></svg>أطباء بيطريون معتمدون</div>
-        <div><svg class="i"><use href="#scan"/></svg>أشعة ومختبر داخل العيادة</div>
-        <div><svg class="i"><use href="#clock"/></svg>مواعيد مرنة طوال الأسبوع</div>
+        <div><svg class="i"><use href="#shield"/></svg>أطباء بيطريون مرخّصون</div>
+        <div><svg class="i"><use href="#xray"/></svg>أشعة ومختبر داخل العيادة</div>
+        <div><svg class="i"><use href="#clock"/></svg>مواعيد طوال الأسبوع</div>
       </div>
     </section>
   </div>
@@ -448,35 +482,45 @@ footer.site img{height:40px}
 <!-- ================= SERVICES ================= -->
 <div class="view" id="v-services">
   <div class="wrap">
-    <section style="margin-top:20px">
-      <div class="sec-head" style="display:block">
-        <h2>الخدمات البيطرية</h2>
-        <p style="margin:4px 0 0;color:var(--muted)">خدمات متكاملة للقطط والكلاب وكل الأليفة في عيادتنا بالدمام.</p>
-      </div>
+    <h1 class="page-title">الخدمات البيطرية</h1>
+    <p class="page-sub">خدمات متكاملة للقطط والكلاب والحيوانات الأليفة في عيادتنا بالدمام.</p>
+    <div class="services-cols">
       <div class="svc-grid" id="allSvc"></div>
-    </section>
+      <div>
+        <div class="sec-head"><h2 style="font-size:16px">خدمات طبية متخصصة</h2></div>
+        <div class="svc-list" id="svcList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= VETS ================= -->
+<div class="view" id="v-vets">
+  <div class="wrap">
+    <h1 class="page-title">أطباؤنا</h1>
+    <p class="page-sub">فريق من الأطباء البيطريين بقيادة د. حسن الموسى، يجمعهم حب الحيوانات قبل المهنة.</p>
+    <div class="vets grid" id="allVets"></div>
   </div>
 </div>
 
 <!-- ================= STORE ================= -->
 <div class="view" id="v-store">
   <div class="wrap">
-    <section style="margin-top:20px">
-      <div class="pets" id="storePets" style="margin-bottom:18px"></div>
-      <div class="chips" id="chips"></div>
-      <div class="prod-grid" id="storeProds"></div>
-    </section>
+    <h1 class="page-title">المتجر</h1>
+    <p class="page-sub">كل ما يحتاجه أليفك، مختار بعناية من أطبائنا ويصل لباب بيتك.</p>
+    <div class="pets" id="storePets"></div>
+    <div class="chips" id="chips"></div>
+    <div class="prod-grid" id="storeProds"></div>
+    <div id="storeEmpty"></div>
   </div>
 </div>
 
 <!-- ================= FAVORITES ================= -->
 <div class="view" id="v-fav">
   <div class="wrap">
-    <section style="margin-top:20px">
-      <div class="sec-head"><h2>المفضلة</h2></div>
-      <div class="prod-grid" id="favProds"></div>
-      <div id="favEmpty"></div>
-    </section>
+    <h1 class="page-title">المفضلة</h1>
+    <div class="prod-grid" id="favProds" style="margin-top:16px"></div>
+    <div id="favEmpty"></div>
   </div>
 </div>
 
@@ -485,28 +529,23 @@ footer.site img{height:40px}
   <div class="wrap">
     <section style="margin-top:20px">
       <div class="profile">
-        <div class="avatar">س</div>
-        <div><b style="font-size:17px">سارة العتيبي</b><div style="color:var(--muted);font-size:13px;direction:ltr;text-align:right">+966 5• ••• ••12</div></div>
+        <div class="av">س</div>
+        <div><b style="font-size:17px">سارة العتيبي</b><div style="color:var(--muted);font-size:13px">عميلة منذ 2024</div></div>
       </div>
     </section>
     <section>
-      <div class="sec-head"><h2>أليفاتي</h2></div>
-      <div class="my-pets">
-        <div class="my-pet"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=120&h=120&fit=crop" alt=""><div><b>لولو</b><small>قطة · 3 سنوات</small></div></div>
-        <div class="my-pet"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=120&h=120&fit=crop" alt=""><div><b>ماكس</b><small>كلب · سنتان</small></div></div>
-        <button class="my-pet add-pet" onclick="toast('إضافة أليف — قريباً في النسخة الكاملة')"><svg class="i"><use href="#plus"/></svg>إضافة أليف</button>
-      </div>
+      <div class="sec-head"><div><h2>أليفاتي</h2><p>لكل أليف طبيب معالج يتابع حالته، ويُختار تلقائياً عند الحجز.</p></div></div>
+      <div class="my-pets" id="myPets"></div>
     </section>
     <section>
-      <div class="sec-head"><h2>مواعيدي</h2></div>
+      <div class="sec-head"><h2>مواعيدي القادمة</h2></div>
       <div id="appts"></div>
     </section>
     <section>
       <div class="menu-list">
-        <button onclick="toast('طلباتي — نموذج أولي')"><svg class="i"><use href="#bag"/></svg>طلباتي<svg class="i"><use href="#chev"/></svg></button>
-        <button onclick="toast('العناوين — نموذج أولي')"><svg class="i"><use href="#pin"/></svg>العناوين<svg class="i"><use href="#chev"/></svg></button>
-        <button onclick="window.open('https://wa.me/966541233327')"><svg class="i"><use href="#chat"/></svg>تواصل معنا<svg class="i"><use href="#chev"/></svg></button>
-        <button onclick="toast('English — نموذج أولي')"><svg class="i"><use href="#globe"/></svg>اللغة: العربية<svg class="i"><use href="#chev"/></svg></button>
+        <button onclick="toast('سجل الطلبات — نموذج أولي')"><svg class="i"><use href="#bag"/></svg>طلباتي<svg class="i sm chev"><use href="#chev"/></svg></button>
+        <button onclick="toast('العناوين — نموذج أولي')"><svg class="i"><use href="#pin"/></svg>العناوين المحفوظة<svg class="i sm chev"><use href="#chev"/></svg></button>
+        <a href="#" data-wa="مرحباً، لدي استفسار"><svg class="i wa-ic" style="color:var(--wa)"><use href="#wa"/></svg>تواصل معنا عبر واتساب<svg class="i sm chev"><use href="#chev"/></svg></a>
       </div>
     </section>
   </div>
@@ -515,21 +554,21 @@ footer.site img{height:40px}
 <footer class="site">
   <div class="wrap">
     <img src="logo.png" alt="الكفوف الأليفة">
-    <span>عيادة الكفوف الأليفة · الدمام · <span dir="ltr">013 815 7775</span></span>
-    <span class="proto">نموذج أولي</span>
+    <span>عيادة الكفوف الأليفة البيطرية · الدمام</span>
+    <a href="#" data-wa="مرحباً"><svg class="i sm wa-ic" style="color:var(--wa)"><use href="#wa"/></svg><span dir="ltr">+966 54 123 3327</span></a>
   </div>
 </footer>
 </main>
 
-<a class="wa" href="https://wa.me/966541233327" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<a class="wa-fab" href="#" data-wa="مرحباً، أرغب في الاستفسار" aria-label="تواصل عبر واتساب"><svg class="i wa-ic"><use href="#wa"/></svg></a>
 
 <nav class="bottom">
-  <div class="in" id="bottomNav">
-    <button data-v="account"><span class="dot"></span><svg class="i"><use href="#user"/></svg>حسابي</button>
-    <button data-v="fav"><span class="dot"></span><svg class="i"><use href="#heart"/></svg>المفضلة</button>
-    <button data-cart><span class="dot"></span><svg class="i"><use href="#bag"/></svg>السلة<span class="badge" data-cart-count>0</span></button>
-    <button data-v="services"><span class="dot"></span><svg class="i"><use href="#steth"/></svg>الخدمات</button>
-    <button data-v="home"><span class="dot"></span><svg class="i"><use href="#home"/></svg>الرئيسية</button>
+  <div class="in">
+    <button data-v="home"><svg class="i"><use href="#home"/></svg>الرئيسية</button>
+    <button data-v="services"><svg class="i"><use href="#steth"/></svg>الخدمات</button>
+    <button data-v="store"><svg class="i"><use href="#store"/></svg>المتجر</button>
+    <button data-cart><svg class="i"><use href="#bag"/></svg>السلة<span class="badge" data-cart-count>0</span></button>
+    <button data-v="account"><svg class="i"><use href="#user"/></svg>حسابي</button>
   </div>
 </nav>
 
@@ -540,18 +579,20 @@ footer.site img{height:40px}
   <img class="logo" src="logo.png" alt="">
   <button class="link" onclick="go('home');closeAll()"><svg class="i"><use href="#home"/></svg>الرئيسية</button>
   <button class="link" onclick="go('services');closeAll()"><svg class="i"><use href="#steth"/></svg>الخدمات البيطرية</button>
-  <button class="link" onclick="go('store');closeAll()"><svg class="i"><use href="#bag"/></svg>المتجر</button>
-  <button class="link" onclick="go('account');closeAll()"><svg class="i"><use href="#cal"/></svg>مواعيدي</button>
-  <a href="tel:+966138157775"><svg class="i"><use href="#phone"/></svg>اتصل بنا</a>
+  <button class="link" onclick="go('vets');closeAll()"><svg class="i"><use href="#users"/></svg>أطباؤنا</button>
+  <button class="link" onclick="go('store');closeAll()"><svg class="i"><use href="#store"/></svg>المتجر</button>
+  <button class="link" onclick="go('fav');closeAll()"><svg class="i"><use href="#heart"/></svg>المفضلة</button>
+  <button class="link" onclick="go('account');closeAll()"><svg class="i"><use href="#cal"/></svg>مواعيدي وأليفاتي</button>
+  <a href="#" data-wa="مرحباً، لدي استفسار"><svg class="i wa-ic" style="color:var(--wa)"><use href="#wa"/></svg>تواصل معنا</a>
   <a href="https://maps.google.com/?cid=9931293386444233742" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>موقع العيادة</a>
-  <div class="foot">عيادة الكفوف الأليفة<br>الدمام، المملكة العربية السعودية<br><span dir="ltr">petpaws.sa@gmail.com</span></div>
+  <div class="foot">عيادة الكفوف الأليفة البيطرية<br>الدمام، المملكة العربية السعودية</div>
 </aside>
 
 <div class="search-panel" id="searchPanel">
   <div class="wrap">
     <div class="head">
-      <label class="field"><svg class="i"><use href="#search"/></svg><input id="q" placeholder="ابحث عن منتج أو خدمة…" autocomplete="off"></label>
-      <button class="close" onclick="closeSearch()"><svg class="i"><use href="#x"/></svg></button>
+      <label class="field"><svg class="i"><use href="#search"/></svg><input id="q" placeholder="ابحث عن خدمة أو منتج أو طبيب" autocomplete="off"></label>
+      <button class="close" onclick="closeSearch()" aria-label="إغلاق"><svg class="i"><use href="#x"/></svg></button>
     </div>
     <div id="results"></div>
   </div>
@@ -562,149 +603,173 @@ footer.site img{height:40px}
 <!-- ================= ICONS ================= -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M8 12h12M12 17h8"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
     <symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="store" viewBox="0 0 24 24"><path d="M4 9 5.5 4h13L20 9M4 9v11h16V9M4 9h16"/><path d="M9 20v-6h6v6"/></symbol>
     <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="chev" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
     <symbol id="home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1v-8Z"/></symbol>
     <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
     <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
     <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
     <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
-    <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></symbol>
-    <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/></symbol>
-    <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></symbol>
     <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
     <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
     <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="scan" viewBox="0 0 24 24"><path d="M4 8V5h3M17 5h3v3M20 16v3h-3M7 19H4v-3"/><path d="M8 12h8M12 9v6"/></symbol>
     <symbol id="steth" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></symbol>
-    <symbol id="syringe" viewBox="0 0 24 24"><path d="m18 2 4 4M20 4l-3 3M14 6l4 4M15 7 7 15l-2 4 4-2 8-8M10 10l2 2M7 13l2 2"/></symbol>
     <symbol id="scalpel" viewBox="0 0 24 24"><path d="M20 4 9 15l-2-2L18 2l2 2Z"/><path d="M7 13c-2 2-4 4-4 8 3 0 6-2 6-6"/></symbol>
     <symbol id="xray" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 6v12M9 8h6M8.5 11h7M9 14h6"/></symbol>
     <symbol id="flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 19a1 1 0 0 0 .9 1.5h12.2A1 1 0 0 0 19 19l-5-10V3"/><path d="M7.5 14h9"/></symbol>
-    <symbol id="tooth" viewBox="0 0 24 24"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4 2 7 .4 2.8 1 6.5 2.5 6.5S9.5 17 12 17s3 4 4.5 4 2.1-3.7 2.5-6.5c.5-3 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></symbol>
-    <symbol id="scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 18M8.5 16.5 20 6"/></symbol>
-    <symbol id="bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></symbol>
     <symbol id="pill" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="m9 9 6 6"/></symbol>
-    <symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><ellipse cx="6" cy="9.5" rx="2" ry="2.6"/><ellipse cx="10" cy="5.5" rx="2" ry="2.6"/><ellipse cx="14.5" cy="5.5" rx="2" ry="2.6"/><ellipse cx="18.3" cy="9.5" rx="2" ry="2.6"/><path d="M12.2 11c-3 0-6 4.5-6 6.8 0 1.6 1.2 2.4 2.6 2.4 1.5 0 2.2-.8 3.4-.8s1.9.8 3.4.8c1.4 0 2.6-.8 2.6-2.4 0-2.3-3-6.8-6-6.8Z"/></g></symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
   </defs>
 </svg>
 
 <script>
 /* ================= DATA ================= */
-const IMG = id => `https://images.unsplash.com/photo-${id}?w=300&h=300&q=70&auto=format&fit=crop`;
-const PETS = [
-  {k:'all', n:'الكل', img:'1548199973-03cce0bbc87b', c:'#e6f6f7'},
-  {k:'cat', n:'القطط', img:'1574158622682-e40e69881006', c:'#dff1f6'},
-  {k:'dog', n:'الكلاب', img:'1543466835-00a7907e9de1', c:'#fde7e4'},
-  {k:'bird', n:'الطيور', img:'1452570053594-1b985d6ea890', c:'#e3f5ec'},
-  {k:'small', n:'القوارض', img:'1425082661705-1834bfd09dca', c:'#fff2cc'},
-  {k:'rabbit', n:'الأرانب', img:'1585110396000-c9ffd4e4b308', c:'#ece8fb'},
+const WA_NUMBER = '966541233327';   // رقم واتساب من صفحة الأسئلة الشائعة
+const waLink = t => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+const U = (id, w=600) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${w}&q=75&auto=format&fit=crop`;
+
+const VETS = [
+  {k:'hassan',  n:'د. حسن الموسى',   r:'المدير العام · طبيب بيطري', ini:'ح', days:'الأحد – الخميس'},
+  {k:'mustafa', n:'د. مصطفى شكري',   r:'طبيب بيطري',                 ini:'م', days:'السبت – الأربعاء'},
+  {k:'ali',     n:'د. علي خان',       r:'طبيب بيطري',                 ini:'ع', days:'الإثنين – الجمعة'},
+  {k:'zahraa',  n:'د. زهراء المؤمن',  r:'طبيبة بيطرية متدربة',        ini:'ز', days:'الأحد – الخميس'},
+];
+const vetBy = k => VETS.find(v=>v.k===k);
+
+const PET_TYPES = [
+  {k:'all',    n:'الكل'},
+  {k:'cat',    n:'القطط',    img:U('1574158622682-e40e69881006',200)},
+  {k:'dog',    n:'الكلاب',   img:U('1543466835-00a7907e9de1',200)},
+  {k:'bird',   n:'الطيور',   img:'photos/slide-bird-1200.webp'},
+  {k:'rabbit', n:'الأرانب والقوارض', img:'photos/slide-rabbit-1200.webp'},
+  {k:'turtle', n:'السلاحف',  img:'photos/slide-turtle-1200.webp'},
 ];
 
+/* Services: wording from petpaws.vet; photos from the clinic's own site */
 const SERVICES = [
-  {k:'pickup', ic:'truck', n:'استلام وتوصيل الحيوانات الأليفة', d:'نستلم أليفك من بيتك ونعيده إليك بعد الخدمة، في الدمام وما حولها.', p:50, incl:['سيارة مجهزة ومكيّفة','قفص نظيف لكل أليف','تتبع وقت الوصول'], feature:true},
-  {k:'vaccine', ic:'syringe', n:'التطعيمات والوقاية الدورية', d:'تطعيمات القطط والكلاب ومكافحة الطفيليات، بجدول يناسب عمر أليفك.', p:120, incl:['جدول تطعيمات حسب العمر','مكافحة الطفيليات الداخلية والخارجية','بطاقة تطعيم رقمية']},
-  {k:'exam', ic:'steth', n:'الكشف الطبي الشامل', d:'فحص سريري وتشخيص وخطة علاج واضحة للقطط والكلاب وكل الأليفة.', p:150, incl:['فحص سريري كامل','وزن وتقييم التغذية','خطة علاج مكتوبة']},
-  {k:'surgery', ic:'scalpel', n:'الجراحات البيطرية', d:'من التعقيم إلى الجراحات العامة، بتخدير آمن ومتابعة بعد العملية.', p:450, incl:['فحوصات ما قبل العملية','تخدير آمن ومراقبة','متابعة بعد العملية']},
-  {k:'xray', ic:'xray', n:'الأشعة والموجات فوق الصوتية', d:'أشعة وسونار داخل العيادة لتشخيص سريع دون تحويل لمكان آخر.', p:250, incl:['أشعة رقمية','سونار للبطن والحمل','تقرير فوري من الطبيب']},
-  {k:'lab', ic:'flask', n:'المختبر البيطري', d:'تحاليل الدم والبول والبراز داخل العيادة بنتائج سريعة.', p:180, incl:['صورة دم كاملة','وظائف كلى وكبد','نتائج في نفس اليوم']},
-  {k:'dental', ic:'tooth', n:'العناية بالأسنان', d:'تنظيف الأسنان وإزالة الجير وخلع الأسنان التالفة.', p:300, incl:['تنظيف وإزالة جير','فحص اللثة','خلع الأسنان التالفة عند الحاجة']},
-  {k:'grooming', ic:'scissors', n:'الترويش والعناية بالنظافة', d:'ترويش واستحمام وقص أظافر في بيئة هادئة وتحت إشراف بيطري.', p:140, incl:['استحمام بشامبو طبي','قص وتمشيط الفرو','قص الأظافر وتنظيف الأذن']},
-  {k:'boarding', ic:'bed', n:'الفندقة (إيواء الحيوانات)', d:'إقامة مريحة مع تغذية ونظافة يومية ومتابعة صحية.', p:90, unit:'/ لليلة', incl:['غرف مكيّفة ونظيفة','وجبات حسب نظام أليفك','صور يومية على واتساب']},
-  {k:'medboard', ic:'pill', n:'الفندقة العلاجية', d:'إقامة للأليف الذي يحتاج أدوية منتظمة أو رعاية بعد العمليات، بإشراف طبيب.', p:160, unit:'/ لليلة', incl:['إعطاء الأدوية في وقتها','متابعة طبيب يومية','رعاية ما بعد العمليات']},
+  {k:'exam',     ic:'steth',   img:'photos/slide-cat-1200.webp',    n:'الكشف الطبي الشامل', d:'فحص سريري وتشخيص وخطة علاج واضحة للقطط والكلاب وكل الأليفة.', p:150, dur:'30 دقيقة'},
+  {k:'vaccine',  ic:'steth',   img:'photos/slide-rabbit-1200.webp', n:'التطعيمات والوقاية الدورية', d:'تطعيمات القطط والكلاب ومكافحة الطفيليات، بجدول يناسب عمر أليفك.', p:120, dur:'20 دقيقة'},
+  {k:'dental',   ic:'steth',   img:'photos/slide-dog-1200.webp',    n:'العناية بالأسنان', d:'تنظيف الأسنان وإزالة الجير وخلع الأسنان التالفة.', p:300, dur:'60 دقيقة'},
+  {k:'grooming', ic:'steth',   img:'photos/grooming-1000.webp',     n:'الترويش والعناية بالنظافة', d:'ترويش واستحمام وقص أظافر في بيئة هادئة وتحت إشراف بيطري.', p:140, dur:'90 دقيقة', noVet:true},
+  {k:'boarding', ic:'steth',   img:'photos/boarding-1000.webp',     n:'الفندقة (إيواء الحيوانات)', d:'إقامة مريحة مع تغذية ونظافة يومية ومتابعة صحية.', p:90, unit:'لليلة', noVet:true},
+  {k:'pickup',   ic:'truck',   img:'photos/carrier-400.webp',       n:'استلام وتوصيل الحيوانات الأليفة', d:'نستلم أليفك من بيتك ونعيده إليك بعد الخدمة، في الدمام وما حولها.', p:50, noVet:true},
+  {k:'surgery',  ic:'scalpel', n:'الجراحات البيطرية', d:'من التعقيم إلى الجراحات العامة، بتخدير آمن ومتابعة بعد العملية.', p:450, list:true, dur:'استشارة قبل العملية'},
+  {k:'xray',     ic:'xray',    n:'الأشعة والموجات فوق الصوتية', d:'أشعة وسونار داخل العيادة لتشخيص سريع دون تحويل لمكان آخر.', p:250, list:true, dur:'30 دقيقة'},
+  {k:'lab',      ic:'flask',   n:'المختبر البيطري', d:'تحاليل الدم والبول والبراز داخل العيادة بنتائج سريعة.', p:180, list:true, dur:'15 دقيقة'},
+  {k:'medboard', ic:'pill',    n:'الفندقة العلاجية', d:'إقامة للأليف الذي يحتاج أدوية منتظمة أو رعاية بعد العمليات، بإشراف طبيب.', p:160, unit:'لليلة', list:true},
 ];
+const svcBy = k => SERVICES.find(s=>s.k===k);
 
 const CATS = [{k:'all',n:'الكل'},{k:'food',n:'الأطعمة الصحية'},{k:'toys',n:'الألعاب'},{k:'acc',n:'الإكسسوارات'},{k:'care',n:'العناية والنظافة'}];
-
-/* Simple flat product illustrations */
-const ART = {
-  bag:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M30 28h60l6 80H24z" fill="${a}"/><path d="M30 28h60l-4-12H34z" fill="${b}"/><rect x="38" y="52" width="44" height="32" rx="16" fill="#fff" opacity=".92"/><g fill="${a}" transform="translate(48 56) scale(1)"><use href="#paw" width="24" height="24"/></g></svg>`,
-  can:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><rect x="28" y="36" width="64" height="62" rx="8" fill="${a}"/><ellipse cx="60" cy="36" rx="32" ry="8" fill="${b}"/><ellipse cx="60" cy="36" rx="24" ry="5" fill="#fff" opacity=".5"/><rect x="28" y="56" width="64" height="22" fill="#fff" opacity=".9"/><g fill="${a}" transform="translate(50 57)"><use href="#paw" width="20" height="20"/></g></svg>`,
-  ball:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><circle cx="60" cy="62" r="38" fill="${a}"/><path d="M26 46c18 8 50 8 68 0M26 78c18-8 50-8 68 0" stroke="#fff" stroke-width="5" fill="none" opacity=".85"/><circle cx="46" cy="44" r="7" fill="#fff" opacity=".35"/></svg>`,
-  wand:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M30 100 78 30" stroke="${b}" stroke-width="6" stroke-linecap="round"/><path d="M78 30c10 14 4 30-6 36M78 30c14 4 22 18 18 30M78 30c4 16 18 22 24 18" stroke="${a}" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="78" cy="30" r="7" fill="${a}"/></svg>`,
-  collar:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><ellipse cx="60" cy="54" rx="40" ry="26" fill="none" stroke="${a}" stroke-width="12"/><rect x="88" y="44" width="14" height="20" rx="3" fill="${b}"/><circle cx="60" cy="92" r="13" fill="${b}"/><circle cx="60" cy="80" r="4" fill="none" stroke="${b}" stroke-width="3"/><g fill="#fff" transform="translate(52 84)"><use href="#paw" width="16" height="16"/></g></svg>`,
-  bowl:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><ellipse cx="60" cy="52" rx="42" ry="10" fill="${b}"/><path d="M18 52h84l-10 34a8 8 0 0 1-8 6H36a8 8 0 0 1-8-6z" fill="${a}"/><circle cx="48" cy="48" r="5" fill="#c58b4f"/><circle cx="60" cy="46" r="5" fill="#b07a42"/><circle cx="71" cy="49" r="5" fill="#c58b4f"/><path d="M40 70h40" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/></svg>`,
-  bottle:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><rect x="50" y="14" width="20" height="14" rx="3" fill="${b}"/><path d="M44 28h32v8c8 4 10 10 10 18v42a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8V54c0-8 2-14 10-18z" fill="${a}"/><rect x="40" y="58" width="40" height="28" rx="6" fill="#fff" opacity=".9"/><path d="M50 68h20M54 76h12" stroke="${a}" stroke-width="4" stroke-linecap="round"/></svg>`,
-  brush:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><rect x="22" y="30" width="62" height="34" rx="12" fill="${a}"/><path d="M30 64v14M40 64v14M50 64v14M60 64v14M70 64v14M78 64v14" stroke="${b}" stroke-width="4" stroke-linecap="round"/><rect x="80" y="40" width="26" height="14" rx="7" fill="${b}"/></svg>`,
-  house:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M18 56 60 22l42 34v42H18z" fill="${a}"/><path d="M12 58 60 18l48 40" stroke="${b}" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M44 98V76a16 16 0 0 1 32 0v22z" fill="#fff" opacity=".9"/></svg>`,
-  cage:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M28 98V52a32 32 0 0 1 64 0v46" fill="none" stroke="${a}" stroke-width="5"/><path d="M44 98V40M60 98V22M76 98V40" stroke="${a}" stroke-width="4"/><rect x="22" y="94" width="76" height="10" rx="4" fill="${b}"/><circle cx="60" cy="18" r="6" fill="${b}"/><path d="M34 70h52" stroke="${b}" stroke-width="4"/></svg>`,
-  litter:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M14 54h92l-8 40H22z" fill="${a}"/><rect x="10" y="48" width="100" height="10" rx="5" fill="${b}"/><circle cx="40" cy="48" r="4" fill="#e7d7bb"/><circle cx="56" cy="46" r="4" fill="#e7d7bb"/><circle cx="72" cy="48" r="4" fill="#e7d7bb"/><circle cx="86" cy="46" r="3" fill="#e7d7bb"/></svg>`,
-  leash:(a,b)=>`<svg class="art" viewBox="0 0 120 120"><path d="M30 26c-14 0-14 22 0 22h6c10 0 14 8 18 18s10 30 30 30" stroke="${a}" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="80" y="86" width="20" height="18" rx="5" fill="${b}"/><circle cx="34" cy="37" r="12" fill="none" stroke="${b}" stroke-width="6"/></svg>`,
-};
+const catName = k => CATS.find(c=>c.k===k).n;
 
 const PRODUCTS = [
-  {id:1, n:'طعام قطط جاف للبالغين – بالسلمون', br:'رويال كانين', cat:'food', pet:'cat', p:165, op:199, art:'bag', c:'#dff1f6', a:'#00a9b6', b:'#007c86', tag:'الأكثر مبيعاً', sizes:['2 كجم','4 كجم','10 كجم'], d:'تركيبة متوازنة للقطط البالغة تدعم صحة الجهاز البولي ولمعان الفرو. مختارة من أطبائنا.'},
-  {id:2, n:'طعام كلاب جاف – سلالات متوسطة', br:'هيلز ساينس', cat:'food', pet:'dog', p:210, op:260, art:'bag', c:'#fde7e4', a:'#e57a5a', b:'#b9533a', tag:'عرض', sizes:['3 كجم','7 كجم','12 كجم'], d:'بروتين عالي الجودة وأحماض أوميغا لدعم المفاصل والطاقة اليومية.'},
-  {id:3, n:'علب طعام رطب للقطط – دجاج', br:'شيبا', cat:'food', pet:'cat', p:48, art:'can', c:'#fff2cc', a:'#e0a91b', b:'#b8860b', sizes:['6 علب','12 علبة','24 علبة'], d:'قطع دجاج طرية في مرق خفيف، مناسبة كوجبة رئيسية أو مكافأة.'},
-  {id:4, n:'كرة مطاطية مقاومة للعض', br:'كونغ', cat:'toys', pet:'dog', p:39, art:'ball', c:'#e3f5ec', a:'#25a36f', b:'#17603f', sizes:['صغير','متوسط','كبير'], d:'مطاط طبيعي متين، يمكن حشوه بالمكافآت لتسلية أطول.'},
-  {id:5, n:'عصا ريش تفاعلية للقطط', br:'بت باوز', cat:'toys', pet:'cat', p:25, art:'wand', c:'#ece8fb', a:'#7c5cd6', b:'#4b3a8a', tag:'جديد', sizes:['قطعة واحدة'], d:'لعبة تحفّز غريزة الصيد وتساعد على النشاط اليومي.'},
-  {id:6, n:'طوق جلد مع اسم الأليف', br:'بت باوز', cat:'acc', pet:'dog', p:75, art:'collar', c:'#dff1f6', a:'#007c86', b:'#e0a91b', sizes:['S','M','L'], d:'جلد ناعم قابل للتعديل مع بطاقة اسم محفورة مجاناً.'},
-  {id:7, n:'وعاء طعام ستانلس مانع للانزلاق', br:'تريكسي', cat:'acc', pet:'all', p:45, art:'bowl', c:'#fde7e4', a:'#e57a5a', b:'#f3b29e', sizes:['400 مل','800 مل'], d:'ستانلس ستيل سهل التنظيف مع قاعدة مطاطية.'},
-  {id:8, n:'شامبو طبي للفرو الحساس', br:'فيربك', cat:'care', pet:'all', p:68, art:'bottle', c:'#e3f5ec', a:'#25a36f', b:'#17603f', tag:'بإشراف بيطري', sizes:['250 مل','500 مل'], d:'خالٍ من العطور القوية، مناسب للبشرة الحساسة والحكة.'},
-  {id:9, n:'فرشاة إزالة الشعر المتساقط', br:'فورمينيتور', cat:'care', pet:'cat', p:89, art:'brush', c:'#fff2cc', a:'#e0a91b', b:'#7a5a00', sizes:['للقطط','للكلاب'], d:'تقلل تساقط الشعر حتى 90% مع الاستخدام المنتظم.'},
-  {id:10, n:'رمل قطط متكتل برائحة اللافندر', br:'إيفر كلين', cat:'care', pet:'cat', p:55, op:65, art:'litter', c:'#ece8fb', a:'#9b86e3', b:'#7c5cd6', sizes:['5 لتر','10 لتر'], d:'تكتل سريع وتحكم بالروائح لمدة تصل إلى أسبوعين.'},
-  {id:11, n:'قفص طيور مع مستلزماته', br:'فيربلاست', cat:'acc', pet:'bird', p:240, art:'cage', c:'#e3f5ec', a:'#17603f', b:'#25a36f', sizes:['متوسط','كبير'], d:'قفص متين مع أوعية طعام وماء وأعمدة وقوف.'},
-  {id:12, n:'طعام بذور مشكّلة للطيور', br:'فيرسيلي', cat:'food', pet:'bird', p:35, art:'bag', c:'#fff2cc', a:'#e0a91b', b:'#b8860b', sizes:['1 كجم','2.5 كجم'], d:'خليط بذور غني بالفيتامينات للببغاوات والكناري.'},
-  {id:13, n:'بيت خشبي للأرانب والقوارض', br:'تريكسي', cat:'acc', pet:'small', p:120, art:'house', c:'#fde7e4', a:'#c58b4f', b:'#8a5a2b', sizes:['صغير','كبير'], d:'خشب طبيعي آمن للقضم، مكان مريح للاختباء والنوم.'},
-  {id:14, n:'رسن تدريب قابل للتمديد', br:'فلكسي', cat:'acc', pet:'dog', p:95, art:'leash', c:'#dff1f6', a:'#007c86', b:'#005f67', sizes:['3 م','5 م'], d:'مقبض مريح وزر قفل سريع، مناسب للمشي اليومي.'},
+  {id:1,  n:'طعام جاف للقطط البالغة – سلمون وأرز', cat:'food', pet:'cat', p:165, op:189, img:U('1589924691995-400dc9ecc119'), sizes:['2 كجم','4 كجم','10 كجم'], d:'تركيبة متوازنة للقطط البالغة تدعم صحة الجهاز البولي ولمعان الفرو.'},
+  {id:2,  n:'طعام رطب للقطط – تشكيلة 12 علبة', cat:'food', pet:'cat', p:72, img:U('1597843786411-a7fa8ad44a95'), sizes:['12 علبة','24 علبة'], d:'قطع لحم طرية في مرق خفيف، مناسبة كوجبة رئيسية أو مكافأة.'},
+  {id:3,  n:'مكافآت تدريب للكلاب – دجاج', cat:'food', pet:'dog', p:38, img:U('1568640347023-a616a30bc3bd'), sizes:['200 جم','500 جم'], d:'قطع صغيرة قليلة الدهون، مثالية للتدريب اليومي.'},
+  {id:4,  n:'عظمة مطاطية مقاومة للعض', cat:'toys', pet:'dog', p:42, img:U('1535294435445-d7249524ef2e'), sizes:['صغير','متوسط','كبير'], d:'مطاط طبيعي متين يساعد على تنظيف الأسنان وتخفيف التوتر.'},
+  {id:5,  n:'لعبة قماشية محشوة للكلاب', cat:'toys', pet:'dog', p:49, img:U('1591946614720-90a587da4a36'), sizes:['قطعة واحدة'], d:'قماش مزدوج الخياطة مع صوت صفير خفيف.'},
+  {id:6,  n:'عمود خدش للقطط مع منصة', cat:'toys', pet:'cat', p:135, img:U('1545249390-6bdfa286032f'), sizes:['60 سم','90 سم'], d:'حبل سيزال طبيعي يحمي أثاثك ويلبي حاجة القطة للخدش.'},
+  {id:7,  n:'سرير مريح للكلاب – قماش قابل للغسل', cat:'acc', pet:'dog', p:220, op:260, img:U('1581888227599-779811939961'), sizes:['M','L','XL'], d:'حشوة ناعمة وحواف مرتفعة لدعم الرأس، والغطاء قابل للإزالة والغسل.'},
+  {id:8,  n:'سرير راتان طبيعي مع وسادة', cat:'acc', pet:'all', p:185, img:U('1600369671236-e74521d4b6ad'), sizes:['S','M'], d:'راتان مجدول يدوياً مع وسادة قطنية قابلة للغسل.'},
+  {id:9,  n:'فرشاة تمشيط لإزالة الشعر المتساقط', cat:'care', pet:'cat', p:89, img:'photos/grooming-1000.webp', sizes:['للقطط','للكلاب'], d:'تقلل تساقط الشعر مع الاستخدام المنتظم، ويستخدمها فريق الترويش لدينا.'},
+  {id:10, n:'خليط غذائي للأرانب والقوارض', cat:'food', pet:'rabbit', p:45, img:U('1548767797-d8c844163c4c'), sizes:['1 كجم','2.5 كجم'], d:'ألياف عالية وخضروات مجففة لدعم الهضم وصحة الأسنان.'},
+  {id:11, n:'حقيبة نقل للقطط والكلاب الصغيرة', cat:'acc', pet:'cat', p:149, img:'photos/carrier-400.webp', sizes:['M','L'], d:'تهوية من الجهات الأربع وباب أمامي آمن، مناسبة لزيارات العيادة.'},
 ];
 
 /* ================= STATE ================= */
-const S = { view:'home', pet:'all', cat:'all', cart:[], fav:new Set([1,8]), appts:[
-  {svc:'vaccine', day:'23', mon:'أكتوبر', time:'5:30 م', pet:'لولو'}
-]};
+const S = {
+  view:'home', petFilter:'all', cat:'all', cart:[], fav:new Set([1,7]),
+  pets:[
+    {id:1, name:'لولو', type:'cat', breed:'قطة شيرازي', age:'3 سنوات', vet:'mustafa', img:U('1574158622682-e40e69881006',200)},
+    {id:2, name:'ماكس', type:'dog', breed:'كلب بيغل', age:'سنتان', vet:'hassan', img:U('1543466835-00a7907e9de1',200)},
+  ],
+  appts:[]
+};
+(function seed(){ const d=new Date(); d.setDate(d.getDate()+4); S.appts.push({svc:'vaccine', date:d, time:'5:00 م', pet:1, vet:'mustafa'}); })();
+
 const $ = s => document.querySelector(s);
-const svg = id => `<svg class="i"><use href="#${id}"/></svg>`;
+const svg = (id,c='') => `<svg class="i ${c}"><use href="#${id}"/></svg>`;
 const money = (p,op) => `<span class="money">${p}<small>ر.س</small>${op?`<s>${op}</s>`:''}</span>`;
+const DAYN = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const MON = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const fmtDate = d => `${DAYN[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`;
+const petBy = id => S.pets.find(p=>p.id===id);
 
 /* ================= RENDER ================= */
-function petsHTML(target){
-  return PETS.map(p=>`<button class="pet ${target==='store'&&S.pet===p.k?'on':''}" style="--c:${p.c}" onclick="pickPet('${p.k}')"><div class="ph"><img src="${IMG(p.img)}" alt="" loading="lazy"></div>${p.n}</button>`).join('');
+function petFilterHTML(){
+  return PET_TYPES.map(p=>`<button class="pet ${S.view==='store'&&S.petFilter===p.k?'on':''}" onclick="pickPet('${p.k}')">${p.img?`<img src="${p.img}" alt="" loading="lazy">`:`<span class="all">${svg('store')}</span>`}${p.n}</button>`).join('');
 }
-function svcCard(s, i){
-  return `<button class="svc ${s.feature?'feature':''}" onclick="openService('${s.k}')">
-    <div class="ic">${svg(s.ic)}</div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:4px"><h3>${s.n}</h3><p>${s.d}</p></div>
-    <div class="price">يبدأ من ${s.p} ر.س ${s.unit||''}</div>
-  </button>`;
+function svcCard(s){
+  return `<div class="svc">
+    <button class="ph" onclick="openService('${s.k}')"><img src="${s.img}" alt="${s.n}" loading="lazy"></button>
+    <div class="bd">
+      <h3>${s.n}</h3><p>${s.d}</p>
+      <div class="ft"><span class="from">يبدأ من <b>${s.p}</b> ر.س${s.unit?' '+s.unit:''}</span><button class="link-btn" onclick="openService('${s.k}')">احجز<svg class="i sm"><use href="#chev"/></svg></button></div>
+    </div></div>`;
+}
+function svcRow(s){
+  return `<button class="svc-row" onclick="openService('${s.k}')"><span class="ic">${svg(s.ic)}</span><span class="tx"><b>${s.n}</b><small>${s.d}</small></span><svg class="i sm chev"><use href="#chev"/></svg></button>`;
+}
+function vetCard(v){
+  const mine = S.pets.filter(p=>p.vet===v.k).map(p=>p.name);
+  return `<div class="vet">
+    <div class="top"><span class="av">${v.ini}</span><div><b>${v.n}</b><small>${v.r}</small></div></div>
+    <span class="days-av"><i></i>متاح ${v.days}</span>
+    ${mine.length?`<span class="mine">الطبيب المعالج لـ ${mine.join(' و')}</span>`:''}
+    <button class="btn ghost sm" onclick="openService('exam',{vet:'${v.k}'})">احجز موعداً</button>
+  </div>`;
 }
 function prodCard(p){
+  const off = p.op ? Math.round((1-p.p/p.op)*100) : 0;
   return `<div class="prod">
-    <button class="thumb" style="--c:${p.c}" onclick="openProduct(${p.id})" aria-label="${p.n}">
-      ${ART[p.art](p.a,p.b)}
-      ${p.tag?`<span class="tag ${p.op?'sale':''}">${p.op?'-'+Math.round((1-p.p/p.op)*100)+'%':p.tag}</span>`:(p.op?`<span class="tag sale">-${Math.round((1-p.p/p.op)*100)}%</span>`:'')}
-      <span class="fav ${S.fav.has(p.id)?'on':''}" onclick="event.stopPropagation();toggleFav(${p.id},this)">${svg('heart')}</span>
+    <button class="thumb" onclick="openProduct(${p.id})" aria-label="${p.n}">
+      <img src="${p.img}" alt="" loading="lazy">
+      ${off?`<span class="tag">خصم ${off}%</span>`:''}
+      <span class="fav ${S.fav.has(p.id)?'on':''}" onclick="event.stopPropagation();toggleFav(${p.id})">${svg('heart')}</span>
     </button>
     <div class="meta">
-      <span class="brand">${p.br}</span>
+      <span class="cat">${catName(p.cat)}</span>
       <h4>${p.n}</h4>
-      <div class="row">${money(p.p,p.op)}<button class="add" onclick="quickAdd(${p.id},this)" aria-label="أضف للسلة">${svg('plus')}</button></div>
+      <div class="row">${money(p.p,p.op)}<button class="add" onclick="quickAdd(${p.id},this)">${svg('plus','sm')}أضف</button></div>
     </div>
   </div>`;
 }
+function emptyHTML(ic,t,s,btn,act){
+  return `<div class="empty"><div class="circle">${svg(ic)}</div><h4>${t}</h4>${s?`<p style="margin:0 0 16px">${s}</p>`:'<div style="height:12px"></div>'}${btn?`<button class="btn primary sm" onclick="${act}">${btn}</button>`:''}</div>`;
+}
 function render(){
-  $('#homePets').innerHTML = petsHTML('home');
-  $('#storePets').innerHTML = petsHTML('store');
-  $('#homeSvc').innerHTML = SERVICES.slice(0, innerWidth>=1024?7:5).map(svcCard).join('');
-  $('#allSvc').innerHTML = SERVICES.map(svcCard).join('');
-  $('#homeProds').innerHTML = PRODUCTS.filter(p=>[1,2,8,4,5,3,6,10].includes(p.id)).slice(0, innerWidth>=1024?8:innerWidth>=700?6:4).map(prodCard).join('');
+  const w = innerWidth;
+  $('#homePets').innerHTML = petFilterHTML();
+  $('#storePets').innerHTML = petFilterHTML();
+  const photoSvc = SERVICES.filter(s=>!s.list);
+  $('#homeSvc').innerHTML = photoSvc.slice(0, w>=1024?3:w>=700?4:3).map(svcCard).join('');
+  $('#allSvc').innerHTML = photoSvc.map(svcCard).join('');
+  $('#svcList').innerHTML = SERVICES.filter(s=>s.list).map(svcRow).join('');
+  $('#homeVets').innerHTML = VETS.map(vetCard).join('');
+  $('#allVets').innerHTML = VETS.map(vetCard).join('');
+  $('#homeProds').innerHTML = [1,7,4,2,6,3].map(id=>PRODUCTS.find(p=>p.id===id)).slice(0, w>=1024?4:w>=700?6:4).map(prodCard).join('');
   $('#chips').innerHTML = CATS.map(c=>`<button class="chip ${S.cat===c.k?'on':''}" onclick="pickCat('${c.k}')">${c.n}</button>`).join('');
-  const list = PRODUCTS.filter(p=>(S.cat==='all'||p.cat===S.cat)&&(S.pet==='all'||p.pet===S.pet||p.pet==='all'||(S.pet==='rabbit'&&p.pet==='small')));
-  $('#storeProds').innerHTML = list.length ? list.map(prodCard).join('') : '';
-  if(!list.length) $('#storeProds').insertAdjacentHTML('afterend','');
+  const list = PRODUCTS.filter(p=>(S.cat==='all'||p.cat===S.cat)&&(S.petFilter==='all'||p.pet===S.petFilter||p.pet==='all'));
+  $('#storeProds').innerHTML = list.map(prodCard).join('');
+  $('#storeEmpty').innerHTML = list.length?'':`<div class="empty"><div class="circle">${svg('store')}</div><h4>لا توجد منتجات في هذا القسم حالياً</h4><p>اسألنا عن أي منتج و<a href="${waLink('مرحباً، أبحث عن منتج')}" target="_blank" style="color:var(--wa);font-weight:600">راسلنا على واتساب</a>.</p></div>`;
   const favs = PRODUCTS.filter(p=>S.fav.has(p.id));
   $('#favProds').innerHTML = favs.map(prodCard).join('');
   $('#favEmpty').innerHTML = favs.length?'':emptyHTML('heart','لا توجد منتجات في المفضلة','اضغط على ♡ في أي منتج لحفظه هنا.','تصفّح المتجر',"go('store')");
-  $('#appts').innerHTML = S.appts.length ? S.appts.map(a=>{const s=SERVICES.find(x=>x.k===a.svc);return `<div class="appt"><div class="date"><b>${a.day}</b><small>${a.mon}</small></div><div><h5>${s.n}</h5><p>${a.pet} · ${a.time}</p></div><span class="status">مؤكد</span></div>`}).join('') : emptyHTML('cal','لا توجد مواعيد','','احجز موعداً',"go('services')");
+  $('#myPets').innerHTML = S.pets.map(p=>{const v=vetBy(p.vet);return `<button class="my-pet" onclick="openPet(${p.id})">
+      <img src="${p.img}" alt=""><span class="tx"><b>${p.name}</b><small>${p.breed} · ${p.age}</small>
+      <span class="doc"><span class="av">${v.ini}</span>${v.n}</span></span><svg class="i sm chev"><use href="#chev"/></svg></button>`}).join('')
+    + `<button class="add-pet" onclick="openPet()">${svg('plus','sm')}إضافة أليف</button>`;
+  const ap = [...S.appts].sort((a,b)=>a.date-b.date);
+  $('#appts').innerHTML = ap.length ? ap.map(a=>{const s=svcBy(a.svc),v=a.vet?vetBy(a.vet):null,p=petBy(a.pet);return `<div class="appt"><div class="date"><b>${a.date.getDate()}</b><small>${MON[a.date.getMonth()]}</small></div><div class="tx"><h5>${s.n}</h5><p>${p?p.name+' · ':''}${a.time}${v?' · '+v.n:''}</p></div><span class="status">مؤكد</span></div>`}).join('') : emptyHTML('cal','لا توجد مواعيد قادمة','','احجز موعداً',"go('services')");
   updateCount();
-}
-function emptyHTML(ic,t,s,btn,act){
-  return `<div class="empty"><div class="circle">${svg(ic)}</div><h4>${t}</h4>${s?`<p style="margin:0 0 16px">${s}</p>`:'<div style="height:12px"></div>'}<button class="btn primary sm" onclick="${act}">${btn}</button></div>`;
 }
 
 /* ================= NAV ================= */
@@ -712,169 +777,217 @@ function go(v){
   S.view = v;
   document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on', e.id==='v-'+v));
   document.querySelectorAll('[data-v]').forEach(b=>b.classList.toggle('on', b.dataset.v===v));
+  render();
   scrollTo({top:0,behavior:'instant'});
 }
 document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>go(b.dataset.v));
 document.querySelector('[data-cart]').onclick=()=>openCart();
-document.querySelector('[data-jump]').onclick=()=>{go('home');setTimeout(()=>$('#offers').scrollIntoView({behavior:'smooth',block:'start'}),50)};
-document.querySelectorAll('[data-svc]').forEach(b=>b.onclick=()=>openService(b.dataset.svc));
-function pickPet(k){ S.pet=k; if(S.view!=='store') go('store'); render(); }
+function wireWA(root=document){
+  root.querySelectorAll('[data-wa]').forEach(a=>{a.href=waLink(a.dataset.wa);a.target='_blank';a.rel='noopener';});
+}
+wireWA();
+function pickPet(k){ S.petFilter=k; if(S.view!=='store') go('store'); else render(); }
 function pickCat(k){ S.cat=k; render(); }
 
 /* ================= SHEETS ================= */
 function openSheet(body, foot){
   $('#sheetBody').innerHTML = body; $('#sheetFoot').innerHTML = foot||''; $('#sheetFoot').style.display = foot?'flex':'none';
-  $('#sheetBody').scrollTop = 0;
+  $('#sheetBody').scrollTop = 0; wireWA($('#sheet'));
   $('#sheet').classList.add('on'); $('#scrim').classList.add('on'); document.body.style.overflow='hidden';
 }
 function closeAll(){
   $('#sheet').classList.remove('on'); $('#drawer').classList.remove('on'); $('#scrim').classList.remove('on'); document.body.style.overflow='';
 }
-function head(t){ return `<div class="sheet-head"><h3>${t}</h3><button class="close" onclick="closeAll()">${svg('x')}</button></div>`; }
+const head = t => `<div class="sheet-head"><h3>${t}</h3><button class="close" onclick="closeAll()" aria-label="إغلاق">${svg('x')}</button></div>`;
 function openDrawer(){ $('#drawer').classList.add('on'); $('#scrim').classList.add('on'); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeAll();closeSearch();} });
+function sel(el){ [...el.parentNode.children].forEach(c=>c.classList.remove('on')); el.classList.add('on'); }
 
-/* Product */
+/* ---- Product ---- */
 let pd = {};
 function openProduct(id){
   const p = PRODUCTS.find(x=>x.id===id); pd = {id, size:p.sizes[0], q:1};
-  openSheet(`${head('')}
-    <div class="pd-art" style="--c:${p.c}">${ART[p.art](p.a,p.b)}</div>
-    <span class="brand" style="color:var(--muted);font-size:13px">${p.br}</span>
+  openSheet(`${head(catName(p.cat))}
+    <div class="pd-img"><img src="${p.img.replace('w=600&h=600','w=900&h=700')}" alt=""></div>
     <h2 class="pd-title">${p.n}</h2>
     ${money(p.p,p.op)}
     <p class="pd-desc">${p.d}</p>
-    <div class="opt-label">الحجم</div>
-    <div class="opts" id="sizes">${p.sizes.map((s,i)=>`<button class="opt ${i?'':'on'}" onclick="pd.size='${s}';[...this.parentNode.children].forEach(c=>c.classList.remove('on'));this.classList.add('on')">${s}</button>`).join('')}</div>
-    <ul class="incl" style="margin-top:20px">
-      <li>${svg('truck')}توصيل خلال 24 ساعة في الدمام والخبر</li>
-      <li>${svg('shield')}منتج أصلي مختار من أطبائنا</li>
-    </ul>`,
+    ${p.sizes.length>1?`<div class="lbl">الحجم</div><div class="opts">${p.sizes.map((s,i)=>`<button class="opt ${i?'':'on'}" onclick="pd.size='${s}';sel(this)">${s}</button>`).join('')}</div>`:''}
+    <ul class="bullets">
+      <li>${svg('truck')}توصيل خلال 24 ساعة داخل الدمام والخبر</li>
+      <li>${svg('shield')}منتج أصلي يوصي به أطباؤنا</li>
+    </ul>
+    <a class="wa-inline" href="#" data-wa="مرحباً، أرغب في الاستفسار عن المنتج: ${p.n}">${svg('wa','wa-ic')}<span>عندك سؤال عن المنتج؟</span><b>اسألنا على واتساب</b></a>`,
     `<div class="qty"><button onclick="pdQty(1)">+</button><span id="pdq">1</span><button onclick="pdQty(-1)">−</button></div>
      <button class="btn primary" style="flex:1" onclick="addToCart(${p.id},pd.size,pd.q);closeAll()">أضف للسلة · <span id="pdt">${p.p}</span> ر.س</button>`);
 }
 function pdQty(d){ const p=PRODUCTS.find(x=>x.id===pd.id); pd.q=Math.max(1,pd.q+d); $('#pdq').textContent=pd.q; $('#pdt').textContent=p.p*pd.q; }
 
-/* Service booking */
-const DAYN = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-const MON = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-const TIMES = ['10:00','11:00','12:00','1:00','4:00','5:00','6:00','7:00','8:00','9:00'];
-let bk = {};
-function openService(k){
-  const s = SERVICES.find(x=>x.k===k);
-  const today = new Date();
-  const days = Array.from({length:10},(_,i)=>{const d=new Date(today);d.setDate(d.getDate()+i+1);return d;});
-  bk = {k, day:0, time:null, pet:'لولو', pickup:k==='pickup', days};
-  openSheet(`${head('حجز موعد')}
-    <div class="svc-hero"><div class="ic">${svg(s.ic)}</div><div><h3>${s.n}</h3><p>${s.d}</p></div></div>
-    <ul class="incl">${s.incl.map(t=>`<li>${svg('check')}${t}</li>`).join('')}</ul>
-    <div class="opt-label">لمن الموعد؟</div>
-    <div class="opts">${['لولو','ماكس','أليف جديد'].map((n,i)=>`<button class="opt ${i?'':'on'}" onclick="bk.pet='${n}';sel(this)">${n}</button>`).join('')}</div>
-    <div class="opt-label">اختر اليوم</div>
-    <div class="days">${days.map((d,i)=>`<button class="day ${i?'':'on'}" onclick="bk.day=${i};sel(this);drawTimes()"><small>${DAYN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MON[d.getMonth()]}</small></button>`).join('')}</div>
-    <div class="opt-label">اختر الوقت</div>
-    <div class="times" id="times"></div>
-    ${k!=='pickup'?`<button class="toggle ${bk.pickup?'on':''}" onclick="bk.pickup=!bk.pickup;this.classList.toggle('on');bkTotal()"><span><b style="display:block;font-size:14px">أضف الاستلام والتوصيل</b><small style="color:var(--muted)">نستلم أليفك من البيت · +50 ر.س</small></span><span class="sw"></span></button>`:''}
-    <div class="opt-label">ملاحظات (اختياري)</div>
-    <label class="field"><input placeholder="مثلاً: أليفي يخاف من الغرباء"></label>`,
-    `<div style="flex:1"><small style="color:var(--muted);display:block;font-size:12px">الإجمالي التقديري</small><b id="bkt" style="font-size:18px"></b></div>
-     <button class="btn primary" style="flex:1.4" onclick="confirmBooking()">تأكيد الحجز</button>`);
-  drawTimes(); bkTotal();
+/* ---- Pet profile: choose the treating vet ---- */
+let pe = {};
+function vetOptions(cur, onPick){
+  return VETS.map(v=>`<button class="vet-opt ${cur===v.k?'on':''}" onclick="${onPick}('${v.k}',this)"><span class="radio"></span><span class="av sm">${v.ini}</span><span class="tx"><b>${v.n}</b><small>${v.r}</small></span></button>`).join('');
 }
-function sel(el){ [...el.parentNode.children].forEach(c=>c.classList.remove('on')); el.classList.add('on'); }
+function pePick(k,el){ pe.vet=k; sel(el); }
+function openPet(id){
+  const p = id ? petBy(id) : null;
+  pe = p ? {...p} : {id:null, type:'cat', vet:VETS[0].k};
+  openSheet(`${head(p?'ملف '+p.name:'إضافة أليف')}
+    ${p?`<div style="display:flex;gap:14px;align-items:center"><img src="${p.img}" style="width:68px;height:68px;border-radius:50%;object-fit:cover"><div><b style="font-size:17px">${p.name}</b><div style="color:var(--muted);font-size:13.5px">${p.breed} · ${p.age}</div></div></div>`
+      :`<div class="lbl">اسم الأليف</div><label class="field"><input id="peName" placeholder="مثلاً: سمبا"></label>
+        <div class="lbl">النوع</div><div class="opts">${PET_TYPES.filter(t=>t.k!=='all').map((t,i)=>`<button class="opt ${i?'':'on'}" onclick="pe.type='${t.k}';sel(this)">${t.n}</button>`).join('')}</div>
+        <div class="lbl">العمر</div><label class="field"><input id="peAge" placeholder="مثلاً: سنة ونصف"></label>`}
+    <div class="lbl">الطبيب المعالج <small>يُختار تلقائياً عند الحجز</small></div>
+    <div class="vet-pick">${vetOptions(pe.vet,'pePick')}</div>
+    ${p?`<div class="lbl">السجل الطبي</div><div class="ticket"><div><span>آخر زيارة</span><b>كشف دوري · قبل شهرين</b></div><div><span>التطعيمات</span><b>محدّثة</b></div><div><span>الوزن</span><b>${p.type==='cat'?'4.2':'11.5'} كجم</b></div></div>`:''}`,
+    `${p?`<button class="btn ghost" onclick="openService('exam',{pet:${p.id}})">احجز لـ ${p.name}</button>`:''}<button class="btn primary" style="flex:1" onclick="savePet()">حفظ</button>`);
+}
+function savePet(){
+  if(pe.id){ petBy(pe.id).vet = pe.vet; toast(`${vetBy(pe.vet).n} أصبح الطبيب المعالج لـ ${pe.name}`); }
+  else{
+    const name = ($('#peName').value||'').trim();
+    if(!name){ $('#peName').focus(); toast('اكتب اسم الأليف'); return; }
+    const t = PET_TYPES.find(x=>x.k===pe.type);
+    S.pets.push({id:Date.now(), name, type:pe.type, breed:t.n, age:($('#peAge').value||'—').trim(), vet:pe.vet, img:t.img});
+    toast(`تمت إضافة ${name}`);
+  }
+  closeAll(); render();
+}
+
+/* ---- Service booking ---- */
+const TIMES = ['10:00 ص','10:30 ص','11:00 ص','11:30 ص','4:00 م','4:30 م','5:00 م','5:30 م','6:00 م','7:00 م','8:00 م','9:00 م'];
+let bk = {};
+function openService(k, o={}){
+  const s = svcBy(k);
+  const days = Array.from({length:14},(_,i)=>{const d=new Date();d.setDate(d.getDate()+i+1);return d;});
+  const pet = o.pet || S.pets[0].id;
+  bk = {k, pet, vet: s.noVet ? null : (o.vet || petBy(pet).vet), day:0, time:null, pickup:k==='pickup', days, chosen:!!o.vet};
+  openSheet(`${head('حجز موعد')}
+    <div class="svc-top">${s.img?`<img src="${s.img}" alt="">`:`<span class="ic">${svg(s.ic)}</span>`}<div><h3>${s.n}</h3><p>يبدأ من ${s.p} ر.س${s.unit?' '+s.unit:''}${s.dur?' · '+s.dur:''}</p></div></div>
+    <div class="lbl">الأليف</div>
+    <div class="opts">${S.pets.map(p=>`<button class="opt ${p.id===pet?'on':''}" onclick="bkPet(${p.id},this)"><img src="${p.img}" alt="">${p.name}</button>`).join('')}<button class="opt" onclick="openPet()">${svg('plus','sm')}أليف جديد</button></div>
+    ${s.noVet?'':`<div class="lbl">الطبيب <small id="vetHint"></small></div><div class="vet-pick" id="bkVets"></div>`}
+    <div class="lbl">اليوم</div>
+    <div class="days">${days.map((d,i)=>`<button class="day ${i?'':'on'}" onclick="bk.day=${i};sel(this);drawTimes()"><small>${DAYN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MON[d.getMonth()]}</small></button>`).join('')}</div>
+    <div class="lbl">الوقت <small>الأوقات الرمادية محجوزة</small></div>
+    <div class="times" id="times"></div>
+    ${k!=='pickup'?`<button class="check-row" onclick="bk.pickup=!bk.pickup;this.classList.toggle('on');bkTotal()"><span class="box">${svg('check')}</span><span class="tx"><b>استلام وتوصيل من البيت</b><small>نستلم أليفك ونعيده بعد الموعد · 50 ر.س</small></span></button>`:''}
+    <div class="lbl">ملاحظات للطبيب <small>اختياري</small></div>
+    <label class="field"><input placeholder="الأعراض أو أي معلومة تهمّ الطبيب"></label>`,
+    `<div style="flex:1;min-width:0"><small style="color:var(--muted);display:block;font-size:12px">الإجمالي التقديري</small><b id="bkt" style="font-size:17px"></b></div>
+     <button class="btn primary" style="flex:1.3" onclick="confirmBooking()">تأكيد الحجز</button>`);
+  drawVets(); drawTimes(); bkTotal();
+}
+function bkPet(id, el){ bk.pet=id; sel(el); if(bk.vet!==null && !bk.chosen) bk.vet=petBy(id).vet; drawVets(); drawTimes(); }
+function bkVet(k){ bk.vet=k; bk.chosen=true; drawVets(); drawTimes(); }
+function drawVets(){
+  const box=$('#bkVets'); if(!box) return;
+  const p=petBy(bk.pet);
+  $('#vetHint').textContent = bk.vet===p.vet ? `الطبيب المعالج لـ ${p.name}` : '';
+  box.innerHTML = VETS.map(v=>`<button class="vet-opt ${bk.vet===v.k?'on':''}" onclick="bkVet('${v.k}')"><span class="radio"></span><span class="av sm">${v.ini}</span><span class="tx"><b>${v.n}</b><small>${v.r}</small></span>${p.vet===v.k?`<span class="pill">طبيب ${p.name}</span>`:''}</button>`).join('')
+    + `<button class="vet-opt ${bk.vet==='any'?'on':''}" onclick="bkVet('any')"><span class="radio"></span><span class="av sm" style="background:var(--soft);color:var(--muted)">${svg('users','sm')}</span><span class="tx"><b>أول طبيب متاح</b><small>أقرب موعد مع أي طبيب</small></span></button>`;
+}
 function drawTimes(){
   bk.time=null;
-  const taken = new Set([(bk.day*3)%10,(bk.day*7+2)%10]);
-  $('#times').innerHTML = TIMES.map((t,i)=>`<button class="opt" ${taken.has(i)?'disabled':''} onclick="bk.time='${t} ${i<3?'ص':'م'}';sel(this)">${t} ${i<3?'ص':'م'}</button>`).join('');
+  const seed = bk.day*5 + (VETS.findIndex(v=>v.k===bk.vet)+2)*3;
+  const taken = bk.vet==='any' ? new Set([seed%12]) : new Set([seed%12,(seed*7+3)%12,(seed+5)%12,(seed*3+1)%12]);
+  $('#times').innerHTML = TIMES.map((t,i)=>`<button class="opt" ${taken.has(i)?'disabled':''} onclick="bk.time='${t}';sel(this)">${t}</button>`).join('');
 }
-function bkTotal(){ const s=SERVICES.find(x=>x.k===bk.k); $('#bkt').textContent = (s.p + (bk.pickup&&bk.k!=='pickup'?50:0)) + ' ر.س'; }
+function bkTotal(){ const s=svcBy(bk.k); $('#bkt').textContent = (s.p + (bk.pickup&&bk.k!=='pickup'?50:0)) + ' ر.س'; }
 function confirmBooking(){
-  if(!bk.time){ toast('اختر وقت الموعد أولاً', true); $('#times').scrollIntoView({behavior:'smooth',block:'center'}); return; }
-  const s=SERVICES.find(x=>x.k===bk.k), d=bk.days[bk.day];
-  S.appts.unshift({svc:bk.k, day:d.getDate(), mon:MON[d.getMonth()], time:bk.time, pet:bk.pet});
+  if(!bk.time){ toast('اختر وقت الموعد'); $('#times').scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  const s=svcBy(bk.k), d=bk.days[bk.day], p=petBy(bk.pet);
+  const vet = bk.vet==='any' ? VETS[2].k : bk.vet;
+  S.appts.push({svc:bk.k, date:d, time:bk.time, pet:bk.pet, vet});
+  const ref = 'PP-'+Math.floor(1000+Math.random()*9000);
+  const v = vet ? vetBy(vet) : null;
+  const msg = `مرحباً، حجزت ${s.n} لـ ${p.name}${v?' مع '+v.n:''} يوم ${fmtDate(d)} الساعة ${bk.time}. رقم الحجز ${ref}`;
   render();
   openSheet(`<div class="success">
       <div class="ok">${svg('check')}</div>
-      <h3>تم تأكيد موعدك!</h3>
-      <p>سنرسل لك تذكيراً على واتساب قبل الموعد بساعتين.</p>
+      <h3>تم تأكيد الموعد</h3>
+      <p>ستصلك رسالة تذكير على واتساب قبل الموعد بساعتين.</p>
       <div class="ticket">
         <div><span>الخدمة</span><b>${s.n}</b></div>
-        <div><span>الأليف</span><b>${bk.pet}</b></div>
-        <div><span>الموعد</span><b>${DAYN[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]} · ${bk.time}</b></div>
+        <div><span>الأليف</span><b>${p.name}</b></div>
+        ${v?`<div><span>الطبيب</span><b>${v.n}</b></div>`:''}
+        <div><span>الموعد</span><b>${fmtDate(d)} · ${bk.time}</b></div>
         ${bk.pickup?`<div><span>الاستلام</span><b>من البيت</b></div>`:''}
-        <div><span>رقم الحجز</span><b dir="ltr">#PP-${Math.floor(1000+Math.random()*9000)}</b></div>
+        <div><span>رقم الحجز</span><b dir="ltr">#${ref}</b></div>
       </div>
+      <a class="wa-inline" href="#" data-wa="${msg}">${svg('wa','wa-ic')}<span>أرسل تفاصيل الحجز للعيادة</span><b>واتساب</b></a>
     </div>`,
     `<button class="btn ghost" style="flex:1" onclick="closeAll();go('account')">مواعيدي</button><button class="btn primary" style="flex:1" onclick="closeAll()">تم</button>`);
 }
 
-/* Cart */
+/* ---- Cart ---- */
 function addToCart(id,size,q=1){
   const p=PRODUCTS.find(x=>x.id===id); size=size||p.sizes[0];
   const it=S.cart.find(x=>x.id===id&&x.size===size);
   it?it.q+=q:S.cart.push({id,size,q});
-  updateCount(); toast('تمت الإضافة إلى السلة');
+  updateCount(); toast('أُضيف إلى السلة');
 }
-function quickAdd(id,btn){ addToCart(id); btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop'); }
+function quickAdd(id,btn){
+  addToCart(id); btn.classList.add('done'); btn.innerHTML=svg('check','sm')+'أُضيف';
+  setTimeout(()=>{btn.classList.remove('done');btn.innerHTML=svg('plus','sm')+'أضف'},1400);
+}
 function updateCount(){
   const n=S.cart.reduce((a,b)=>a+b.q,0);
   document.querySelectorAll('[data-cart-count]').forEach(b=>{b.textContent=n;b.classList.toggle('on',n>0)});
 }
 function openCart(){
-  if(!S.cart.length){ openSheet(head('السلة')+emptyHTML('bag','سلتك فارغة','أضف منتجات مختارة من أطبائنا لأليفك.','تسوّق الآن',"closeAll();go('store')")); return; }
+  if(!S.cart.length){ openSheet(head('السلة')+emptyHTML('bag','سلتك فارغة','أضف منتجات يوصي بها أطباؤنا لأليفك.','تسوّق الآن',"closeAll();go('store')")); return; }
   const sub=S.cart.reduce((a,it)=>a+PRODUCTS.find(p=>p.id===it.id).p*it.q,0);
-  const disc=Math.round(sub*.1), ship=sub>=200?0:20;
+  const disc=Math.round(sub*.1), ship=sub>=200?0:20, tot=sub-disc+ship;
   openSheet(`${head('السلة')}
     ${S.cart.map((it,i)=>{const p=PRODUCTS.find(x=>x.id===it.id);return `<div class="cart-item">
-      <div class="th" style="--c:${p.c}">${ART[p.art](p.a,p.b)}</div>
+      <img src="${p.img}" alt="">
       <div class="info"><h5>${p.n}</h5><div class="sub">${it.size}</div>${money(p.p*it.q)}</div>
       <div class="qty"><button onclick="cq(${i},1)">+</button><span>${it.q}</span><button onclick="cq(${i},-1)">−</button></div>
     </div>`}).join('')}
-    <label class="field" style="margin-top:16px"><svg class="i"><use href="#check"/></svg><input value="PAWS10" readonly><span style="color:var(--accent);font-weight:600;font-size:13px">تم التطبيق</span></label>
     <div class="sum">
       <div><span>المجموع الفرعي</span><span>${sub} ر.س</span></div>
-      <div style="color:var(--accent)"><span>خصم أول طلب (10%)</span><span>-${disc} ر.س</span></div>
+      <div style="color:var(--accent)"><span>خصم أول طلب PAWS10</span><span>-${disc} ر.س</span></div>
       <div><span>التوصيل</span><span>${ship?ship+' ر.س':'مجاني'}</span></div>
-      ${ship?`<div style="font-size:12.5px;color:var(--muted)"><span>أضف ${200-sub} ر.س للتوصيل المجاني</span></div>`:''}
-      <div class="tot"><span>الإجمالي</span><span>${sub-disc+ship} ر.س</span></div>
-    </div>`,
-    `<button class="btn primary block" onclick="checkout(${sub-disc+ship})">إتمام الطلب · ${sub-disc+ship} ر.س</button>`);
+      ${ship?`<div style="font-size:12.5px;color:var(--muted)"><span>التوصيل مجاني للطلبات فوق 200 ر.س</span></div>`:''}
+      <div class="tot"><span>الإجمالي شامل الضريبة</span><span>${tot} ر.س</span></div>
+    </div>
+    <div class="lbl">طريقة الدفع</div>
+    <div class="opts"><button class="opt on" onclick="sel(this)">الدفع عند الاستلام</button><button class="opt" onclick="sel(this)">مدى</button><button class="opt" onclick="sel(this)">Apple Pay</button></div>`,
+    `<button class="btn primary block" onclick="checkout(${tot})">إتمام الطلب · ${tot} ر.س</button>`);
 }
 function cq(i,d){ S.cart[i].q+=d; if(S.cart[i].q<1) S.cart.splice(i,1); updateCount(); openCart(); }
 function checkout(total){
   S.cart=[]; updateCount();
-  openSheet(`<div class="success"><div class="ok">${svg('check')}</div><h3>تم استلام طلبك!</h3><p>سيصلك الطلب خلال 24 ساعة. يمكنك متابعته من حسابك.</p>
-    <div class="ticket"><div><span>رقم الطلب</span><b dir="ltr">#ORD-${Math.floor(10000+Math.random()*90000)}</b></div><div><span>المبلغ</span><b>${total} ر.س</b></div><div><span>الدفع</span><b>عند الاستلام</b></div></div></div>`,
+  openSheet(`<div class="success"><div class="ok">${svg('check')}</div><h3>تم استلام طلبك</h3><p>سيصلك الطلب خلال 24 ساعة، وسنتواصل معك على واتساب عند الشحن.</p>
+    <div class="ticket"><div><span>رقم الطلب</span><b dir="ltr">#ORD-${Math.floor(10000+Math.random()*90000)}</b></div><div><span>المبلغ</span><b>${total} ر.س</b></div><div><span>التوصيل المتوقع</span><b>غداً</b></div></div></div>`,
     `<button class="btn primary block" onclick="closeAll();go('home')">العودة للرئيسية</button>`);
 }
 
-/* Favorites */
-function toggleFav(id,el){
-  S.fav.has(id)?S.fav.delete(id):S.fav.add(id);
-  toast(S.fav.has(id)?'أُضيف إلى المفضلة':'أُزيل من المفضلة');
-  render();
-}
+/* ---- Favorites ---- */
+function toggleFav(id){ S.fav.has(id)?S.fav.delete(id):S.fav.add(id); toast(S.fav.has(id)?'أُضيف إلى المفضلة':'أُزيل من المفضلة'); render(); }
 
-/* Search */
+/* ---- Search ---- */
 function openSearch(){ $('#searchPanel').classList.add('on'); setTimeout(()=>$('#q').focus(),100); doSearch(''); }
 function closeSearch(){ $('#searchPanel').classList.remove('on'); }
 function doSearch(q){
   q=q.trim();
-  if(!q){ $('#results').innerHTML = `<div class="opt-label">عمليات بحث شائعة</div><div class="hints">${['تطعيم','طعام قطط','ترويش','شامبو','أشعة','ألعاب'].map(h=>`<button class="chip" onclick="q.value='${h}';doSearch('${h}')">${h}</button>`).join('')}</div>`; return; }
-  const sv=SERVICES.filter(s=>(s.n+s.d).includes(q)), pr=PRODUCTS.filter(p=>(p.n+p.br+p.d+CATS.find(c=>c.k===p.cat).n).includes(q));
-  $('#results').innerHTML = (sv.length||pr.length) ?
-    sv.map(s=>`<button class="res" onclick="closeSearch();openService('${s.k}')"><div class="th" style="--c:var(--tint)">${svg(s.ic)}</div><div><b>${s.n}</b><small>خدمة · يبدأ من ${s.p} ر.س</small></div></button>`).join('') +
-    pr.map(p=>`<button class="res" onclick="closeSearch();openProduct(${p.id})"><div class="th" style="--c:${p.c}">${ART[p.art](p.a,p.b)}</div><div><b>${p.n}</b><small>${p.br} · ${p.p} ر.س</small></div></button>`).join('')
-    : `<div class="empty"><h4>لا توجد نتائج لـ "${q}"</h4><p>جرّب كلمة أخرى.</p></div>`;
+  if(!q){ $('#results').innerHTML = `<div class="lbl">عمليات بحث شائعة</div><div class="opts">${['تطعيم','ترويش','طعام','أسنان','حسن','سرير'].map(h=>`<button class="chip" onclick="document.getElementById('q').value='${h}';doSearch('${h}')">${h}</button>`).join('')}</div>`; return; }
+  const sv=SERVICES.filter(s=>(s.n+s.d).includes(q)), pr=PRODUCTS.filter(p=>(p.n+p.d+catName(p.cat)).includes(q)), vt=VETS.filter(v=>(v.n+v.r).includes(q));
+  $('#results').innerHTML = (sv.length||pr.length||vt.length) ?
+    vt.map(v=>`<button class="res" onclick="closeSearch();openService('exam',{vet:'${v.k}'})"><span class="ic av">${v.ini}</span><div><b>${v.n}</b><small>${v.r} · احجز موعداً</small></div></button>`).join('') +
+    sv.map(s=>`<button class="res" onclick="closeSearch();openService('${s.k}')">${s.img?`<img src="${s.img}" alt="">`:`<span class="ic">${svg(s.ic)}</span>`}<div><b>${s.n}</b><small>خدمة · يبدأ من ${s.p} ر.س</small></div></button>`).join('') +
+    pr.map(p=>`<button class="res" onclick="closeSearch();openProduct(${p.id})"><img src="${p.img}" alt=""><div><b>${p.n}</b><small>${catName(p.cat)} · ${p.p} ر.س</small></div></button>`).join('')
+    : `<div class="empty"><h4>لا توجد نتائج لـ "${q}"</h4><p>جرّب كلمة أخرى أو <a href="${waLink('مرحباً، أبحث عن: '+q)}" target="_blank" style="color:var(--wa);font-weight:600">اسألنا على واتساب</a>.</p></div>`;
 }
 $('#q').addEventListener('input',e=>doSearch(e.target.value));
 
-/* Toast */
+/* ---- Toast ---- */
 let tt;
-function toast(msg){ const t=$('#toast'); t.querySelector('span').textContent=msg; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),1800); }
+function toast(msg){ const t=$('#toast'); t.querySelector('span').textContent=msg; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),2000); }
 
 let rw; addEventListener('resize',()=>{clearTimeout(rw);rw=setTimeout(render,150)});
-render(); go('home');
+go('home');
 </script>
 </body>
 </html>
